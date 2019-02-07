@@ -19,7 +19,7 @@ app = Flask(__name__)
 db = SQLAlchemy(app)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://user:root@localhost/secure_server_db'
 Bootstrap(app)
-
+print db
 
 @app.route('/')
 def index():
