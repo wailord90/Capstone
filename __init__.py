@@ -8,6 +8,8 @@ import pprint
 import pusher 
 from datetime import datetime
 from flask_sqlalchemy import SQLAlchemy
+import pymysql
+import re
 # load_dotenv('.myenv')
 # pprint.pprint(dict(os.environ))
 
@@ -16,18 +18,43 @@ from flask_sqlalchemy import SQLAlchemy
 
 
 app = Flask(__name__)
-db = SQLAlchemy(app)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://user:root@localhost/secure_sever_db'
+# db = SQLAlchemy(app)
+# app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://user:root@localhost/secure_sever_db'
 Bootstrap(app)
-print db
+
+def news():
+    host='localhost'
+    user = 'root'
+    password = 'password'
+    db = 'secure_sever_db'
+
+    try:
+        con = pymysql.connect(host=host,user=user,password=password,db=db, use_unicode=True, charset='utf8')
+        print('+=========================+')
+        print('|  CONNECTED TO DATABASE  |')
+        print('+=========================+')
+     except Exception as e:
+        sys.exit('error',e)
+
+     cur = con.cursor()
+     cur.execute("SELECT * FROM dataset")
+     data = cur.fetchall()
+    return data
+    #  for row in data:
+    #      video = row[0]
+    #      logs = row[1]
+    #      print('===============================================')
+    #      print('Video', video)
+    #      print('Logs :', logs)
+    #      print('===============================================')
 
 @app.route('/archives')
 def archive():
   return render_template('archive.html')
 @app.route('/')
 def index():
-  cursor = db.execute('SELECT video,logs FROM table_name')
-  return render_template('index.html',items=cursor.fetchall())
+  data = news()
+  return render_template('index.html',items=data)
   @app.route('/logs')
 def logs():
   return render_template('logs.html')
