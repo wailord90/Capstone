@@ -21,13 +21,15 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://user:root@localhost/secure_serv
 Bootstrap(app)
 print db
 
+@app.route('/archive')
+def archive():
+  return render_template('archive.html')
 @app.route('/')
 def index():
   return render_template('index.html')
 
 class Example(db.Model):
-	__tablename__ = 'example'
-	id = db.Column('id', db.Integer, primary_key=True)
+	__tablename__ = 'table_name'
 	data = db.Column('data', db.Unicode)
 
 if __name__ == '__main__':
