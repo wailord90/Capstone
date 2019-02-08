@@ -26,7 +26,8 @@ def archive():
   return render_template('archive.html')
 @app.route('/')
 def index():
-  return render_template('index.html')
+  cursor = db.execute('SELECT video,logs FROM table_name')
+  return render_template('index.html',items=cursor.fetchall())
   @app.route('/logs')
 def logs():
   return render_template('logs.html')
