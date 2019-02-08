@@ -55,10 +55,10 @@ def archive():
 def index():
   data = news()
   return render_template('index.html',items=data)
-  @app.route('/logs')
+@app.route('/logs')
 def logs():
   return render_template('logs.html')
-  @app.route('/cameras')
+@app.route('/cameras')
 def cameras():
   return render_template('cameras.html')
 
