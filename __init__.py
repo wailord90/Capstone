@@ -33,13 +33,13 @@ def news():
         print('+=========================+')
         print('|  CONNECTED TO DATABASE  |')
         print('+=========================+')
-     except Exception as e:
+    except Exception as e:
         sys.exit('error',e)
 
      cur = con.cursor()
      cur.execute("SELECT * FROM dataset")
      data = cur.fetchall()
-    return data
+     return data
     #  for row in data:
     #      video = row[0]
     #      logs = row[1]
