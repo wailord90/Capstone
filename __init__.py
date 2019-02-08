@@ -36,10 +36,10 @@ def news():
     except Exception as e:
         sys.exit('error',e)
 
-     cur = con.cursor()
-     cur.execute("SELECT * FROM dataset")
-     data = cur.fetchall()
-     return data
+    cur = con.cursor()
+    cur.execute("SELECT * FROM dataset")
+    data = cur.fetchall()
+    return data
     #  for row in data:
     #      video = row[0]
     #      logs = row[1]
