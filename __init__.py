@@ -10,10 +10,10 @@ from datetime import datetime
 from sqlalchemy import create_engine, MetaData, Table
 
 
-engine = create_engine('mysql://root:password@localhost/var/lib/mysql/secure_sever_db', convert_unicode=True)
+engine = create_engine('mysql://BH6:password1@localhost/secure_sever_db', convert_unicode=True)
 metadata = MetaData(bind=engine)
 table = Table('table_name', metadata, autoload=True)
-data = engine.execute('select * from table_name', [1]).first()
+data = engine.execute('select * from table_name').first()
 
 app = Flask(__name__)
 # db = SQLAlchemy(app)
@@ -32,9 +32,7 @@ def logs():
 @app.route('/cameras')
 def cameras():
   return render_template('cameras.html')
-@app.teardown_appcontext
-def shutdown_session(exception=None):
-    db_session.remove()
+
 
 #class Example(db.Model):
 #	__tablename__ = 'table_name'
