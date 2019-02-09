@@ -10,10 +10,10 @@ from datetime import datetime
 from sqlalchemy import create_engine, MetaData, Table
 
 
-engine = create_engine('mysql://BH6:password1@localhost/secure_sever_db', convert_unicode=True)
-metadata = MetaData(bind=engine)
-table = Table('table_name', metadata, autoload=True)
-data = engine.execute('select * from table_name').first()
+# engine = create_engine('mysql://BH6:password1@localhost/secure_sever_db', convert_unicode=True)
+# metadata = MetaData(bind=engine)
+# table = Table('table_name', metadata, autoload=True)
+# data = engine.execute('select * from table_name').first()
 
 app = Flask(__name__)
 # db = SQLAlchemy(app)
@@ -25,7 +25,7 @@ def archive():
   return render_template('archive.html')
 @app.route('/')
 def index():
-  return render_template('index.html',items=data)
+  return render_template('index.html',items="data")
 @app.route('/logs')
 def logs():
   return render_template('logs.html')
