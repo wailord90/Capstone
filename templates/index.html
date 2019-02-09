@@ -11,10 +11,14 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <script>
-      var str = '{{items}}';
-      document.getElementById('para').innerHTML = str;
-      console.log(str);
-      console.log('maybe: {{items}}');
+      window.onload = function what() {
+        document.getElementById('hello').innerHTML = 'hi';
+
+        var str = '{{items}}';
+        document.getElementById('para').innerHTML = str;
+        console.log(str);
+        console.log('maybe: {{items}}');
+      };
     </script>
     <style>
       /* Remove the navbar's default margin-bottom and rounded borders */
