@@ -7,53 +7,24 @@ import json
 import pprint
 import pusher 
 from datetime import datetime
-from flask_sqlalchemy import SQLAlchemy
-import pymysql
-import re
-# load_dotenv('.myenv')
-# pprint.pprint(dict(os.environ))
+from sqlalchemy import create_engine, MetaData, Table
 
 
-
-
+engine = create_engine('mysql://root:password@localhost/var/lib/mysql/secure_sever_db', convert_unicode=True)
+metadata = MetaData(bind=engine)
+table = Table('table_name', metadata, autoload=True)
+data = engine.execute('select * from table_name', [1]).first()
 
 app = Flask(__name__)
 # db = SQLAlchemy(app)
 # app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://user:root@localhost/secure_sever_db'
 Bootstrap(app)
 
-def news():
-    host='localhost'
-    user = 'root'
-    password = 'password'
-    db = 'secure_sever_db'
-
-    try:
-        con = pymysql.connect(host=host,user=user,password=password,db=db, use_unicode=True, charset='utf8')
-        print('+=========================+')
-        print('|  CONNECTED TO DATABASE  |')
-        print('+=========================+')
-    except Exception as e:
-        sys.exit('error',e)
-
-    cur = con.cursor()
-    cur.execute("SELECT * FROM dataset")
-    data = cur.fetchall()
-    return data
-    #  for row in data:
-    #      video = row[0]
-    #      logs = row[1]
-    #      print('===============================================')
-    #      print('Video', video)
-    #      print('Logs :', logs)
-    #      print('===============================================')
-
 @app.route('/archives')
 def archive():
   return render_template('archive.html')
 @app.route('/')
 def index():
-  data = news()
   return render_template('index.html',items=data)
 @app.route('/logs')
 def logs():
@@ -61,6 +32,9 @@ def logs():
 @app.route('/cameras')
 def cameras():
   return render_template('cameras.html')
+@app.teardown_appcontext
+def shutdown_session(exception=None):
+    db_session.remove()
 
 #class Example(db.Model):
 #	__tablename__ = 'table_name'
