@@ -15,7 +15,7 @@ from sqlalchemy import create_engine, MetaData, Table
 # table = Table('table_name', metadata, autoload=True)
 # data = engine.execute('select * from table_name').first()
 
-app = Flask(__name__)
+app = Flask(__name__,static_url_path='/static')
 # db = SQLAlchemy(app)
 # app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://user:root@localhost/secure_sever_db'
 Bootstrap(app)

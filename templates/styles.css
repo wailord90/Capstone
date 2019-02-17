@@ -22,3 +22,10 @@ li a {
 li a:hover {
   background-color: #111;
 }
+
+#cameras {
+  background-color: #111;
+  opacity: 90%;
+  padding: 50px;
+  border: #111;
+}
