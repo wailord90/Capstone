@@ -2,10 +2,13 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://user:root@localhost/secure_server_db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://user:root@localhost/secure_server:3333'
 db = SQLAlchemy(app)
+Example(db)
+
 
 class Example(db.Model):
-	__tablename__ = 'example'
-	id = db.Column('id', db.Integer, primary_key=True)
-	data = db.Column('data', db.Unicode)
+	__tablename__ = 'user_sessions'
+	date = db.Column('date', db.Integer)
+	user = db.Column('user', db.Unicode)
+	console.log("here")
