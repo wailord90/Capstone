@@ -9,6 +9,7 @@ import pusher
 import cv2
 import sys
 import numpy
+import time
 from datetime import datetime
 from sqlalchemy import create_engine, MetaData, Table
 
@@ -22,6 +23,8 @@ app = Flask(__name__,static_url_path='/static')
 # db = SQLAlchemy(app)
 # app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://user:root@localhost/secure_sever_db'
 Bootstrap(app)
+
+#camera2=cv2.VideoCapture(0) #this makes a web cam object
 
 @app.route('/archives')
 def archive():
@@ -44,18 +47,29 @@ def gen():
         i+=1
 
 def get_frame():
-
+    #global camera2
+    #del(camera2)
     camera=cv2.VideoCapture(0) #this makes a web cam object
-  
+    #global camera
+    fourcc = cv2.VideoWriter_fourcc(*'XVID')
+    out = cv2.VideoWriter('output.avi',fourcc, 8.0, (640,480))
+    #cap = cv2.VideoCapture(0)
 
-    while True:
-        ret, frame = camera.read()
-        imgencode=cv2.imencode('.jpg',frame)[1]
-        stringData=imgencode.tostring()
-        yield (b'--frame\r\n'b'Content-Type: text/plain\r\n\r\n'+stringData+b'\r\n')
- 
+    while(True):
 
-    del(camera)
+        ret, frame2 = camera.read() #frame 2 is current frame
+
+
+        if ret == True:  #if camera is working
+            out.write(frame2)  #write the current frame to the video file
+            imgencode=cv2.imencode('.jpg',frame2)[1]
+            stringData=imgencode.tostring()
+            yield (b'--frame\r\n'b'Content-Type: text/plain\r\n\r\n'+stringData+b'\r\n')
+
+    #release video and camera
+    out.release()  
+    camera.release()
+
 
 @app.route('/changed')
 def calc():
@@ -67,3 +81,4 @@ def calc():
 
 if __name__ == '__main__':
     app.run(debug=True)
+    
