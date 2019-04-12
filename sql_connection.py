@@ -1,14 +1,16 @@
 from flask import Flask 
 from flask_sqlalchemy import SQLAlchemy
-
+import os
+db_path = os.path.realpath(os.path.join(os.path.dirname(__file__), 'app2.db'))
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://user:root@localhost/secure_server:3333'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////tmp/test.db'
 db = SQLAlchemy(app)
-Example(db)
 
 
-class Example(db.Model):
-	__tablename__ = 'user_sessions'
-	date = db.Column('date', db.Integer)
-	user = db.Column('user', db.Unicode)
-	console.log("here")
+class User_Sessions(db.Model):
+        id = db.Column(db.Integer, primary_key=True)
+	date = db.Column(db.DateTime,nullable=False)
+	user = db.Column(db.String(80),nullable=False)
+        def __repr__(self):
+            return '|%r|%r|' % (self.date,self.user)
+
