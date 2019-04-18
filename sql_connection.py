@@ -3,7 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 import os
 db_path = os.path.realpath(os.path.join(os.path.dirname(__file__), 'app2.db'))
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////tmp/test.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////etc/test.db'
 db = SQLAlchemy(app)
 
 
