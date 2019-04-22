@@ -13,4 +13,10 @@ class User_Sessions(db.Model):
 	user = db.Column(db.String(80),nullable=False)
         def __repr__(self):
             return '|%r|%r|' % (self.date,self.user)
+class footage(db.Model):
+        id = db.Column(db.Integer, primary_key=True)
+        date = db.Column(db.DateTime,nullable=False)
+        user = db.Column(db.String(80),nullable=False)
+        def __repr__(self):
+            return '|%r|%r|' % (self.date,self.usr)
 
