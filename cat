@@ -1,0 +1,464 @@
+type=SYSCALL msg=audit(04/22/2019 22:36:46.063:490) : arch=x86_64 syscall=execve success=yes exit=0 a0=0x55bdf5812580 a1=0x55bdf583cf00 a2=0x55bdf57ea6c0 a3=0x8 items=2 ppid=1776 pid=3434 auid=user uid=root gid=root euid=root suid=root fsuid=root egid=root sgid=root fsgid=root tty=tty1 ses=1 comm=less exe=/bin/less subj==unconfined key=(null) 
+----
+type=PROCTITLE msg=audit(04/22/2019 22:36:46.063:491) : proctitle=grep --color=auto cmd -B 3 
+--
+type=PATH msg=audit(04/22/2019 22:36:46.063:491) : item=0 name=/bin/grep inode=1048641 dev=08:02 mode=file,755 ouid=root ogid=root rdev=00:00 nametype=NORMAL cap_fp=none cap_fi=none cap_fe=0 cap_fver=0 
+type=CWD msg=audit(04/22/2019 22:36:46.063:491) : cwd=/var/log/audit 
+type=EXECVE msg=audit(04/22/2019 22:36:46.063:491) : argc=5 a0=grep a1=--color=auto a2=cmd a3=-B a4=3 
+--
+type=SYSCALL msg=audit(04/22/2019 22:37:07.891:500) : arch=x86_64 syscall=execve success=yes exit=0 a0=0x55c74092ab68 a1=0x55c74092aaa0 a2=0x55c74092aac0 a3=0x0 items=2 ppid=3442 pid=3444 auid=user uid=root gid=root euid=root suid=root fsuid=root egid=root sgid=root fsgid=root tty=tty1 ses=1 comm=tr exe=/usr/bin/tr subj==unconfined key=(null) 
+----
+type=PROCTITLE msg=audit(04/22/2019 22:37:18.135:502) : proctitle=grep --color=auto cmd -B 3 
+--
+type=PATH msg=audit(04/22/2019 22:37:18.135:502) : item=0 name=/bin/grep inode=1048641 dev=08:02 mode=file,755 ouid=root ogid=root rdev=00:00 nametype=NORMAL cap_fp=none cap_fi=none cap_fe=0 cap_fver=0 
+type=CWD msg=audit(04/22/2019 22:37:18.135:502) : cwd=/var/log/audit 
+type=EXECVE msg=audit(04/22/2019 22:37:18.135:502) : argc=5 a0=grep a1=--color=auto a2=cmd a3=-B a4=3 
+--
+type=SYSCALL msg=audit(04/22/2019 22:40:51.933:515) : arch=x86_64 syscall=execve success=yes exit=0 a0=0x55bdf583d860 a1=0x55bdf583d920 a2=0x55bdf57ea6c0 a3=0x0 items=2 ppid=1776 pid=3459 auid=user uid=root gid=root euid=root suid=root fsuid=root egid=root sgid=root fsgid=root tty=tty1 ses=1 comm=ausearch exe=/sbin/ausearch subj==unconfined key=(null) 
+----
+type=PROCTITLE msg=audit(04/22/2019 22:40:51.933:514) : proctitle=grep --color=auto cmd -B 3 
+--
+type=PATH msg=audit(04/22/2019 22:40:51.933:514) : item=0 name=/bin/grep inode=1048641 dev=08:02 mode=file,755 ouid=root ogid=root rdev=00:00 nametype=NORMAL cap_fp=none cap_fi=none cap_fe=0 cap_fver=0 
+type=CWD msg=audit(04/22/2019 22:40:51.933:514) : cwd=/var/www/FlaskApp/FlaskApp/Capstone 
+type=EXECVE msg=audit(04/22/2019 22:40:51.933:514) : argc=5 a0=grep a1=--color=auto a2=cmd a3=-B a4=3 
+--
+type=SYSCALL msg=audit(04/22/2019 22:58:47.011:568) : arch=x86_64 syscall=execve success=yes exit=0 a0=0x55b87687dbe0 a1=0x55b8768ae2b8 a2=0x55b87687afd0 a3=0x8 items=2 ppid=3542 pid=3543 auid=user uid=root gid=root euid=root suid=root fsuid=root egid=root sgid=root fsgid=root tty=tty1 ses=1 comm=git exe=/usr/lib/git-core/git subj==unconfined key=(null) 
+----
+type=PROCTITLE msg=audit(04/22/2019 22:58:54.271:570) : proctitle=sh -c ausearch -ua root -i | grep cmd -B 3 > tmpfile.txt 
+--
+type=PATH msg=audit(04/22/2019 22:58:54.271:570) : item=0 name=/bin/sh inode=1048624 dev=08:02 mode=file,755 ouid=root ogid=root rdev=00:00 nametype=NORMAL cap_fp=none cap_fi=none cap_fe=0 cap_fver=0 
+type=CWD msg=audit(04/22/2019 22:58:54.271:570) : cwd=/var/www/FlaskApp/FlaskApp/Capstone 
+type=EXECVE msg=audit(04/22/2019 22:58:54.271:570) : argc=3 a0=sh a1=-c a2=ausearch -ua root -i | grep cmd -B 3 > tmpfile.txt 
+type=SYSCALL msg=audit(04/22/2019 22:58:54.271:570) : arch=x86_64 syscall=execve success=yes exit=0 a0=0x7f7abf252e80 a1=0x7fff3f136840 a2=0x7fff3f136fa0 a3=0x8 items=2 ppid=3544 pid=3545 auid=user uid=root gid=root euid=root suid=root fsuid=root egid=root sgid=root fsgid=root tty=tty1 ses=1 comm=sh exe=/bin/dash subj==unconfined key=(null) 
+----
+type=PROCTITLE msg=audit(04/22/2019 22:58:54.303:571) : proctitle=grep cmd -B 3 
+--
+type=PATH msg=audit(04/22/2019 22:58:54.303:571) : item=0 name=/bin/grep inode=1048641 dev=08:02 mode=file,755 ouid=root ogid=root rdev=00:00 nametype=NORMAL cap_fp=none cap_fi=none cap_fe=0 cap_fver=0 
+type=CWD msg=audit(04/22/2019 22:58:54.303:571) : cwd=/var/www/FlaskApp/FlaskApp/Capstone 
+type=EXECVE msg=audit(04/22/2019 22:58:54.303:571) : argc=4 a0=grep a1=cmd a2=-B a3=3 
+--
+type=SYSCALL msg=audit(04/22/2019 22:59:20.187:574) : arch=x86_64 syscall=execve success=yes exit=0 a0=0x55bdf5813710 a1=0x55bdf58136f0 a2=0x55bdf57ea6c0 a3=0x8 items=2 ppid=1776 pid=3549 auid=user uid=root gid=root euid=root suid=root fsuid=root egid=root sgid=root fsgid=root tty=tty1 ses=1 comm=python exe=/usr/bin/python2.7 subj==unconfined key=(null) 
+----
+type=PROCTITLE msg=audit(04/22/2019 22:59:20.195:575) : proctitle=sh -c ausearch -ua root -i | grep cmd -B 3 > tmpfile.txt 
+--
+type=PATH msg=audit(04/22/2019 22:59:20.195:575) : item=0 name=/bin/sh inode=1048624 dev=08:02 mode=file,755 ouid=root ogid=root rdev=00:00 nametype=NORMAL cap_fp=none cap_fi=none cap_fe=0 cap_fver=0 
+type=CWD msg=audit(04/22/2019 22:59:20.195:575) : cwd=/var/www/FlaskApp/FlaskApp/Capstone 
+type=EXECVE msg=audit(04/22/2019 22:59:20.195:575) : argc=3 a0=sh a1=-c a2=ausearch -ua root -i | grep cmd -B 3 > tmpfile.txt 
+type=SYSCALL msg=audit(04/22/2019 22:59:20.195:575) : arch=x86_64 syscall=execve success=yes exit=0 a0=0x7fbab14ffe80 a1=0x7ffdb9bb8730 a2=0x7ffdb9bb8e90 a3=0x8 items=2 ppid=3549 pid=3550 auid=user uid=root gid=root euid=root suid=root fsuid=root egid=root sgid=root fsgid=root tty=tty1 ses=1 comm=sh exe=/bin/dash subj==unconfined key=(null) 
+----
+type=PROCTITLE msg=audit(04/22/2019 22:59:20.199:576) : proctitle=grep cmd -B 3 
+--
+type=PATH msg=audit(04/22/2019 22:59:20.199:576) : item=0 name=/bin/grep inode=1048641 dev=08:02 mode=file,755 ouid=root ogid=root rdev=00:00 nametype=NORMAL cap_fp=none cap_fi=none cap_fe=0 cap_fver=0 
+type=CWD msg=audit(04/22/2019 22:59:20.199:576) : cwd=/var/www/FlaskApp/FlaskApp/Capstone 
+type=EXECVE msg=audit(04/22/2019 22:59:20.199:576) : argc=4 a0=grep a1=cmd a2=-B a3=3 
+--
+type=SYSCALL msg=audit(04/22/2019 23:00:43.215:579) : arch=x86_64 syscall=execve success=yes exit=0 a0=0x55bdf5813040 a1=0x55bdf5813750 a2=0x55bdf57ea6c0 a3=0x8 items=2 ppid=1776 pid=3555 auid=user uid=root gid=root euid=root suid=root fsuid=root egid=root sgid=root fsgid=root tty=tty1 ses=1 comm=python exe=/usr/bin/python2.7 subj==unconfined key=(null) 
+----
+type=PROCTITLE msg=audit(04/22/2019 23:00:43.227:580) : proctitle=sh -c ausearch -ua root -i | grep cmd -B 3 > tmpfile.txt 
+--
+type=PATH msg=audit(04/22/2019 23:00:43.227:580) : item=0 name=/bin/sh inode=1048624 dev=08:02 mode=file,755 ouid=root ogid=root rdev=00:00 nametype=NORMAL cap_fp=none cap_fi=none cap_fe=0 cap_fver=0 
+type=CWD msg=audit(04/22/2019 23:00:43.227:580) : cwd=/var/www/FlaskApp/FlaskApp/Capstone 
+type=EXECVE msg=audit(04/22/2019 23:00:43.227:580) : argc=3 a0=sh a1=-c a2=ausearch -ua root -i | grep cmd -B 3 > tmpfile.txt 
+type=SYSCALL msg=audit(04/22/2019 23:00:43.227:580) : arch=x86_64 syscall=execve success=yes exit=0 a0=0x7f1c2c056e80 a1=0x7ffd5bd00b30 a2=0x7ffd5bd01290 a3=0x8 items=2 ppid=3555 pid=3556 auid=user uid=root gid=root euid=root suid=root fsuid=root egid=root sgid=root fsgid=root tty=tty1 ses=1 comm=sh exe=/bin/dash subj==unconfined key=(null) 
+----
+type=PROCTITLE msg=audit(04/22/2019 23:00:43.227:581) : proctitle=grep cmd -B 3 
+--
+type=PATH msg=audit(04/22/2019 23:00:43.227:581) : item=0 name=/bin/grep inode=1048641 dev=08:02 mode=file,755 ouid=root ogid=root rdev=00:00 nametype=NORMAL cap_fp=none cap_fi=none cap_fe=0 cap_fver=0 
+type=CWD msg=audit(04/22/2019 23:00:43.227:581) : cwd=/var/www/FlaskApp/FlaskApp/Capstone 
+type=EXECVE msg=audit(04/22/2019 23:00:43.227:581) : argc=4 a0=grep a1=cmd a2=-B a3=3 
+--
+type=SYSCALL msg=audit(04/22/2019 23:01:35.047:584) : arch=x86_64 syscall=execve success=yes exit=0 a0=0x55bdf5813750 a1=0x55bdf583dca0 a2=0x55bdf57ea6c0 a3=0x8 items=2 ppid=1776 pid=3560 auid=user uid=root gid=root euid=root suid=root fsuid=root egid=root sgid=root fsgid=root tty=tty1 ses=1 comm=python exe=/usr/bin/python2.7 subj==unconfined key=(null) 
+----
+type=PROCTITLE msg=audit(04/22/2019 23:01:35.063:585) : proctitle=sh -c ausearch -ua root -i | grep cmd -B 3 > tmpfile.txt 
+--
+type=PATH msg=audit(04/22/2019 23:01:35.063:585) : item=0 name=/bin/sh inode=1048624 dev=08:02 mode=file,755 ouid=root ogid=root rdev=00:00 nametype=NORMAL cap_fp=none cap_fi=none cap_fe=0 cap_fver=0 
+type=CWD msg=audit(04/22/2019 23:01:35.063:585) : cwd=/var/www/FlaskApp/FlaskApp/Capstone 
+type=EXECVE msg=audit(04/22/2019 23:01:35.063:585) : argc=3 a0=sh a1=-c a2=ausearch -ua root -i | grep cmd -B 3 > tmpfile.txt 
+type=SYSCALL msg=audit(04/22/2019 23:01:35.063:585) : arch=x86_64 syscall=execve success=yes exit=0 a0=0x7fdc0ec64e80 a1=0x7fff79729150 a2=0x7fff797298b0 a3=0x8 items=2 ppid=3560 pid=3561 auid=user uid=root gid=root euid=root suid=root fsuid=root egid=root sgid=root fsgid=root tty=tty1 ses=1 comm=sh exe=/bin/dash subj==unconfined key=(null) 
+----
+type=PROCTITLE msg=audit(04/22/2019 23:01:35.063:586) : proctitle=grep cmd -B 3 
+--
+type=PATH msg=audit(04/22/2019 23:01:35.063:586) : item=0 name=/bin/grep inode=1048641 dev=08:02 mode=file,755 ouid=root ogid=root rdev=00:00 nametype=NORMAL cap_fp=none cap_fi=none cap_fe=0 cap_fver=0 
+type=CWD msg=audit(04/22/2019 23:01:35.063:586) : cwd=/var/www/FlaskApp/FlaskApp/Capstone 
+type=EXECVE msg=audit(04/22/2019 23:01:35.063:586) : argc=4 a0=grep a1=cmd a2=-B a3=3 
+--
+type=SYSCALL msg=audit(04/22/2019 23:01:58.701:589) : arch=x86_64 syscall=execve success=yes exit=0 a0=0x55bdf583deb0 a1=0x55bdf583dc70 a2=0x55bdf57ea6c0 a3=0x8 items=2 ppid=1776 pid=3564 auid=user uid=root gid=root euid=root suid=root fsuid=root egid=root sgid=root fsgid=root tty=tty1 ses=1 comm=ausearch exe=/sbin/ausearch subj==unconfined key=(null) 
+----
+type=PROCTITLE msg=audit(04/22/2019 23:01:58.701:588) : proctitle=grep --color=auto cmd -B 4 
+--
+type=PATH msg=audit(04/22/2019 23:01:58.701:588) : item=0 name=/bin/grep inode=1048641 dev=08:02 mode=file,755 ouid=root ogid=root rdev=00:00 nametype=NORMAL cap_fp=none cap_fi=none cap_fe=0 cap_fver=0 
+type=CWD msg=audit(04/22/2019 23:01:58.701:588) : cwd=/var/www/FlaskApp/FlaskApp/Capstone 
+type=EXECVE msg=audit(04/22/2019 23:01:58.701:588) : argc=5 a0=grep a1=--color=auto a2=cmd a3=-B a4=4 
+type=SYSCALL msg=audit(04/22/2019 23:01:58.701:588) : arch=x86_64 syscall=execve success=yes exit=0 a0=0x55bdf583de90 a1=0x55bdf5812920 a2=0x55bdf57ea6c0 a3=0x1b6 items=2 ppid=1776 pid=3565 auid=user uid=root gid=root euid=root suid=root fsuid=root egid=root sgid=root fsgid=root tty=tty1 ses=1 comm=grep exe=/bin/grep subj==unconfined key=(null) 
+----
+type=PROCTITLE msg=audit(04/22/2019 23:02:06.086:591) : proctitle=grep --color=auto cmd -B 4 
+--
+type=PATH msg=audit(04/22/2019 23:02:06.086:591) : item=0 name=/bin/grep inode=1048641 dev=08:02 mode=file,755 ouid=root ogid=root rdev=00:00 nametype=NORMAL cap_fp=none cap_fi=none cap_fe=0 cap_fver=0 
+type=CWD msg=audit(04/22/2019 23:02:06.086:591) : cwd=/var/www/FlaskApp/FlaskApp/Capstone 
+type=EXECVE msg=audit(04/22/2019 23:02:06.086:591) : argc=5 a0=grep a1=--color=auto a2=cmd a3=-B a4=4 
+--
+type=SYSCALL msg=audit(04/22/2019 23:02:10.122:593) : arch=x86_64 syscall=execve success=yes exit=0 a0=0x55bdf5813a90 a1=0x55bdf583dc70 a2=0x55bdf57ea6c0 a3=0x8 items=2 ppid=1776 pid=3568 auid=user uid=root gid=root euid=root suid=root fsuid=root egid=root sgid=root fsgid=root tty=tty1 ses=1 comm=ausearch exe=/sbin/ausearch subj==unconfined key=(null) 
+----
+type=PROCTITLE msg=audit(04/22/2019 23:02:10.122:592) : proctitle=grep --color=auto cmd -B 5 
+--
+type=PATH msg=audit(04/22/2019 23:02:10.122:592) : item=0 name=/bin/grep inode=1048641 dev=08:02 mode=file,755 ouid=root ogid=root rdev=00:00 nametype=NORMAL cap_fp=none cap_fi=none cap_fe=0 cap_fver=0 
+type=CWD msg=audit(04/22/2019 23:02:10.122:592) : cwd=/var/www/FlaskApp/FlaskApp/Capstone 
+type=EXECVE msg=audit(04/22/2019 23:02:10.122:592) : argc=5 a0=grep a1=--color=auto a2=cmd a3=-B a4=5 
+--
+type=SYSCALL msg=audit(04/22/2019 23:02:13.654:595) : arch=x86_64 syscall=execve success=yes exit=0 a0=0x55bdf5813c30 a1=0x55bdf583dec0 a2=0x55bdf57ea6c0 a3=0x8 items=2 ppid=1776 pid=3570 auid=user uid=root gid=root euid=root suid=root fsuid=root egid=root sgid=root fsgid=root tty=tty1 ses=1 comm=ausearch exe=/sbin/ausearch subj==unconfined key=(null) 
+----
+type=PROCTITLE msg=audit(04/22/2019 23:02:13.650:594) : proctitle=grep --color=auto cmd -B 6 
+--
+type=PATH msg=audit(04/22/2019 23:02:13.650:594) : item=0 name=/bin/grep inode=1048641 dev=08:02 mode=file,755 ouid=root ogid=root rdev=00:00 nametype=NORMAL cap_fp=none cap_fi=none cap_fe=0 cap_fver=0 
+type=CWD msg=audit(04/22/2019 23:02:13.650:594) : cwd=/var/www/FlaskApp/FlaskApp/Capstone 
+type=EXECVE msg=audit(04/22/2019 23:02:13.650:594) : argc=5 a0=grep a1=--color=auto a2=cmd a3=-B a4=6 
+--
+type=SYSCALL msg=audit(04/22/2019 23:03:45.185:598) : arch=x86_64 syscall=execve success=yes exit=0 a0=0x55bdf5813a90 a1=0x55bdf5813560 a2=0x55bdf57ea6c0 a3=0x8 items=2 ppid=1776 pid=3574 auid=user uid=root gid=root euid=root suid=root fsuid=root egid=root sgid=root fsgid=root tty=tty1 ses=1 comm=awk exe=/usr/bin/gawk subj==unconfined key=(null) 
+----
+type=PROCTITLE msg=audit(04/22/2019 23:03:45.185:596) : proctitle=grep --color=auto cmd -B 3 
+--
+type=PATH msg=audit(04/22/2019 23:03:45.185:596) : item=0 name=/bin/grep inode=1048641 dev=08:02 mode=file,755 ouid=root ogid=root rdev=00:00 nametype=NORMAL cap_fp=none cap_fi=none cap_fe=0 cap_fver=0 
+type=CWD msg=audit(04/22/2019 23:03:45.185:596) : cwd=/var/www/FlaskApp/FlaskApp/Capstone 
+type=EXECVE msg=audit(04/22/2019 23:03:45.185:596) : argc=5 a0=grep a1=--color=auto a2=cmd a3=-B a4=3 
+--
+type=SYSCALL msg=audit(04/22/2019 23:04:45.917:600) : arch=x86_64 syscall=execve success=yes exit=0 a0=0x55bdf5813bb0 a1=0x55bdf583e030 a2=0x55bdf57ea6c0 a3=0x8 items=2 ppid=1776 pid=3577 auid=user uid=root gid=root euid=root suid=root fsuid=root egid=root sgid=root fsgid=root tty=tty1 ses=1 comm=ausearch exe=/sbin/ausearch subj==unconfined key=(null) 
+----
+type=PROCTITLE msg=audit(04/22/2019 23:04:45.913:599) : proctitle=grep --color=auto cmd -B 3 
+--
+type=PATH msg=audit(04/22/2019 23:04:45.913:599) : item=0 name=/bin/grep inode=1048641 dev=08:02 mode=file,755 ouid=root ogid=root rdev=00:00 nametype=NORMAL cap_fp=none cap_fi=none cap_fe=0 cap_fver=0 
+type=CWD msg=audit(04/22/2019 23:04:45.913:599) : cwd=/var/www/FlaskApp/FlaskApp/Capstone 
+type=EXECVE msg=audit(04/22/2019 23:04:45.913:599) : argc=5 a0=grep a1=--color=auto a2=cmd a3=-B a4=3 
+--
+type=SYSCALL msg=audit(04/22/2019 23:05:34.552:602) : arch=x86_64 syscall=execve success=yes exit=0 a0=0x55bdf5813bf0 a1=0x55bdf5813910 a2=0x55bdf57ea6c0 a3=0x8 items=2 ppid=1776 pid=3580 auid=user uid=root gid=root euid=root suid=root fsuid=root egid=root sgid=root fsgid=root tty=tty1 ses=1 comm=ausearch exe=/sbin/ausearch subj==unconfined key=(null) 
+----
+type=PROCTITLE msg=audit(04/22/2019 23:05:34.552:601) : proctitle=grep --color=auto cmd -B 3 
+--
+type=PATH msg=audit(04/22/2019 23:05:34.552:601) : item=0 name=/bin/grep inode=1048641 dev=08:02 mode=file,755 ouid=root ogid=root rdev=00:00 nametype=NORMAL cap_fp=none cap_fi=none cap_fe=0 cap_fver=0 
+type=CWD msg=audit(04/22/2019 23:05:34.552:601) : cwd=/var/www/FlaskApp/FlaskApp/Capstone 
+type=EXECVE msg=audit(04/22/2019 23:05:34.552:601) : argc=5 a0=grep a1=--color=auto a2=cmd a3=-B a4=3 
+type=SYSCALL msg=audit(04/22/2019 23:05:34.552:601) : arch=x86_64 syscall=execve success=yes exit=0 a0=0x55bdf5813bf0 a1=0x55bdf5834470 a2=0x55bdf57ea6c0 a3=0x8 items=2 ppid=1776 pid=3581 auid=user uid=root gid=root euid=root suid=root fsuid=root egid=root sgid=root fsgid=root tty=tty1 ses=1 comm=grep exe=/bin/grep subj==unconfined key=(null) 
+----
+type=PROCTITLE msg=audit(04/22/2019 23:05:38.308:604) : proctitle=grep --color=auto cmd -B 3 
+--
+type=PATH msg=audit(04/22/2019 23:05:38.308:604) : item=0 name=/bin/grep inode=1048641 dev=08:02 mode=file,755 ouid=root ogid=root rdev=00:00 nametype=NORMAL cap_fp=none cap_fi=none cap_fe=0 cap_fver=0 
+type=CWD msg=audit(04/22/2019 23:05:38.308:604) : cwd=/var/www/FlaskApp/FlaskApp/Capstone 
+type=EXECVE msg=audit(04/22/2019 23:05:38.308:604) : argc=5 a0=grep a1=--color=auto a2=cmd a3=-B a4=3 
+--
+type=SYSCALL msg=audit(04/22/2019 23:07:20.673:607) : arch=x86_64 syscall=execve success=yes exit=0 a0=0x55bdf5813c70 a1=0x55bdf583e3d0 a2=0x55bdf57ea6c0 a3=0x8 items=2 ppid=1776 pid=3585 auid=user uid=root gid=root euid=root suid=root fsuid=root egid=root sgid=root fsgid=root tty=tty1 ses=1 comm=ausearch exe=/sbin/ausearch subj==unconfined key=(null) 
+----
+type=PROCTITLE msg=audit(04/22/2019 23:07:20.673:606) : proctitle=grep --color=auto cmd -B 3 --group-seperator 
+--
+type=PATH msg=audit(04/22/2019 23:07:20.673:606) : item=0 name=/bin/grep inode=1048641 dev=08:02 mode=file,755 ouid=root ogid=root rdev=00:00 nametype=NORMAL cap_fp=none cap_fi=none cap_fe=0 cap_fver=0 
+type=CWD msg=audit(04/22/2019 23:07:20.673:606) : cwd=/var/www/FlaskApp/FlaskApp/Capstone 
+type=EXECVE msg=audit(04/22/2019 23:07:20.673:606) : argc=6 a0=grep a1=--color=auto a2=cmd a3=-B a4=3 a5=--group-seperator 
+--
+type=SYSCALL msg=audit(04/22/2019 23:07:44.050:609) : arch=x86_64 syscall=execve success=yes exit=0 a0=0x55bdf5813040 a1=0x55bdf583e400 a2=0x55bdf57ea6c0 a3=0x8 items=2 ppid=1776 pid=3587 auid=user uid=root gid=root euid=root suid=root fsuid=root egid=root sgid=root fsgid=root tty=tty1 ses=1 comm=ausearch exe=/sbin/ausearch subj==unconfined key=(null) 
+----
+type=PROCTITLE msg=audit(04/22/2019 23:07:44.046:608) : proctitle=grep --color=auto cmd -B 3 --group-seperator== 
+--
+type=PATH msg=audit(04/22/2019 23:07:44.046:608) : item=0 name=/bin/grep inode=1048641 dev=08:02 mode=file,755 ouid=root ogid=root rdev=00:00 nametype=NORMAL cap_fp=none cap_fi=none cap_fe=0 cap_fver=0 
+type=CWD msg=audit(04/22/2019 23:07:44.046:608) : cwd=/var/www/FlaskApp/FlaskApp/Capstone 
+type=EXECVE msg=audit(04/22/2019 23:07:44.046:608) : argc=6 a0=grep a1=--color=auto a2=cmd a3=-B a4=3 a5=--group-seperator== 
+--
+type=SYSCALL msg=audit(04/22/2019 23:09:19.766:653) : arch=x86_64 syscall=execve success=yes exit=0 a0=0x55bdf5813a70 a1=0x55bdf583df80 a2=0x55bdf57ea6c0 a3=0x8 items=2 ppid=1776 pid=3623 auid=user uid=root gid=root euid=root suid=root fsuid=root egid=root sgid=root fsgid=root tty=tty1 ses=1 comm=ausearch exe=/sbin/ausearch subj==unconfined key=(null) 
+----
+type=PROCTITLE msg=audit(04/22/2019 23:09:19.766:652) : proctitle=grep --color=auto cmd -B 3 -SEP 
+--
+type=PATH msg=audit(04/22/2019 23:09:19.766:652) : item=0 name=/bin/grep inode=1048641 dev=08:02 mode=file,755 ouid=root ogid=root rdev=00:00 nametype=NORMAL cap_fp=none cap_fi=none cap_fe=0 cap_fver=0 
+type=CWD msg=audit(04/22/2019 23:09:19.766:652) : cwd=/var/www/FlaskApp/FlaskApp/Capstone 
+type=EXECVE msg=audit(04/22/2019 23:09:19.766:652) : argc=6 a0=grep a1=--color=auto a2=cmd a3=-B a4=3 a5=-SEP 
+--
+type=SYSCALL msg=audit(04/22/2019 23:09:27.722:655) : arch=x86_64 syscall=execve success=yes exit=0 a0=0x55bdf5813040 a1=0x55bdf583e060 a2=0x55bdf57ea6c0 a3=0x8 items=2 ppid=1776 pid=3625 auid=user uid=root gid=root euid=root suid=root fsuid=root egid=root sgid=root fsgid=root tty=tty1 ses=1 comm=ausearch exe=/sbin/ausearch subj==unconfined key=(null) 
+----
+type=PROCTITLE msg=audit(04/22/2019 23:09:27.718:654) : proctitle=grep --color=auto cmd -B 3 --SEP 
+--
+type=PATH msg=audit(04/22/2019 23:09:27.718:654) : item=0 name=/bin/grep inode=1048641 dev=08:02 mode=file,755 ouid=root ogid=root rdev=00:00 nametype=NORMAL cap_fp=none cap_fi=none cap_fe=0 cap_fver=0 
+type=CWD msg=audit(04/22/2019 23:09:27.718:654) : cwd=/var/www/FlaskApp/FlaskApp/Capstone 
+type=EXECVE msg=audit(04/22/2019 23:09:27.718:654) : argc=6 a0=grep a1=--color=auto a2=cmd a3=-B a4=3 a5=--SEP 
+--
+type=SYSCALL msg=audit(04/22/2019 23:12:02.000:658) : arch=x86_64 syscall=execve success=yes exit=0 a0=0x55bdf5813d10 a1=0x55bdf5813d30 a2=0x55bdf57ea6c0 a3=0x8 items=2 ppid=1776 pid=3630 auid=user uid=root gid=root euid=root suid=root fsuid=root egid=root sgid=root fsgid=root tty=tty1 ses=1 comm=sed exe=/bin/sed subj==unconfined key=(null) 
+----
+type=PROCTITLE msg=audit(04/22/2019 23:12:02.000:656) : proctitle=grep --color=auto cmd -B 3 
+--
+type=PATH msg=audit(04/22/2019 23:12:02.000:656) : item=0 name=/bin/grep inode=1048641 dev=08:02 mode=file,755 ouid=root ogid=root rdev=00:00 nametype=NORMAL cap_fp=none cap_fi=none cap_fe=0 cap_fver=0 
+type=CWD msg=audit(04/22/2019 23:12:02.000:656) : cwd=/var/www/FlaskApp/FlaskApp/Capstone 
+type=EXECVE msg=audit(04/22/2019 23:12:02.000:656) : argc=5 a0=grep a1=--color=auto a2=cmd a3=-B a4=3 
+--
+type=SYSCALL msg=audit(04/22/2019 23:15:34.165:660) : arch=x86_64 syscall=execve success=yes exit=0 a0=0x55bdf5814080 a1=0x55bdf583d900 a2=0x55bdf57ea6c0 a3=0x8 items=2 ppid=1776 pid=3632 auid=user uid=root gid=root euid=root suid=root fsuid=root egid=root sgid=root fsgid=root tty=tty1 ses=1 comm=ausearch exe=/sbin/ausearch subj==unconfined key=(null) 
+----
+type=PROCTITLE msg=audit(04/22/2019 23:15:34.165:659) : proctitle=grep --color=auto cmd -B 3 \n 
+--
+type=PATH msg=audit(04/22/2019 23:15:34.165:659) : item=0 name=/bin/grep inode=1048641 dev=08:02 mode=file,755 ouid=root ogid=root rdev=00:00 nametype=NORMAL cap_fp=none cap_fi=none cap_fe=0 cap_fver=0 
+type=CWD msg=audit(04/22/2019 23:15:34.165:659) : cwd=/var/www/FlaskApp/FlaskApp/Capstone 
+type=EXECVE msg=audit(04/22/2019 23:15:34.165:659) : argc=6 a0=grep a1=--color=auto a2=cmd a3=-B a4=3 a5=\n 
+--
+type=SYSCALL msg=audit(04/22/2019 23:15:41.582:662) : arch=x86_64 syscall=execve success=yes exit=0 a0=0x55bdf5813d90 a1=0x55bdf583e250 a2=0x55bdf57ea6c0 a3=0x8 items=2 ppid=1776 pid=3634 auid=user uid=root gid=root euid=root suid=root fsuid=root egid=root sgid=root fsgid=root tty=tty1 ses=1 comm=ausearch exe=/sbin/ausearch subj==unconfined key=(null) 
+----
+type=PROCTITLE msg=audit(04/22/2019 23:15:41.578:661) : proctitle=grep --color=auto cmd -B 3 /n 
+--
+type=PATH msg=audit(04/22/2019 23:15:41.578:661) : item=0 name=/bin/grep inode=1048641 dev=08:02 mode=file,755 ouid=root ogid=root rdev=00:00 nametype=NORMAL cap_fp=none cap_fi=none cap_fe=0 cap_fver=0 
+type=CWD msg=audit(04/22/2019 23:15:41.578:661) : cwd=/var/www/FlaskApp/FlaskApp/Capstone 
+type=EXECVE msg=audit(04/22/2019 23:15:41.578:661) : argc=6 a0=grep a1=--color=auto a2=cmd a3=-B a4=3 a5=/n 
+--
+type=SYSCALL msg=audit(04/22/2019 23:25:42.108:672) : arch=x86_64 syscall=execve success=yes exit=0 a0=0x55bdf5814110 a1=0x55bdf5814130 a2=0x55bdf57ea6c0 a3=0x8 items=2 ppid=1776 pid=3644 auid=user uid=root gid=root euid=root suid=root fsuid=root egid=root sgid=root fsgid=root tty=tty1 ses=1 comm=tr exe=/usr/bin/tr subj==unconfined key=(null) 
+----
+type=PROCTITLE msg=audit(04/22/2019 23:25:42.108:673) : proctitle=grep --color=auto cmd -B 3 
+--
+type=PATH msg=audit(04/22/2019 23:25:42.108:673) : item=0 name=/bin/grep inode=1048641 dev=08:02 mode=file,755 ouid=root ogid=root rdev=00:00 nametype=NORMAL cap_fp=none cap_fi=none cap_fe=0 cap_fver=0 
+type=CWD msg=audit(04/22/2019 23:25:42.108:673) : cwd=/var/www/FlaskApp/FlaskApp/Capstone 
+type=EXECVE msg=audit(04/22/2019 23:25:42.108:673) : argc=5 a0=grep a1=--color=auto a2=cmd a3=-B a4=3 
+--
+type=SYSCALL msg=audit(04/22/2019 23:25:42.112:674) : arch=x86_64 syscall=execve success=yes exit=0 a0=0x55bdf583d6b0 a1=0x55bdf583d900 a2=0x55bdf57ea6c0 a3=0x8 items=2 ppid=1776 pid=3642 auid=user uid=root gid=root euid=root suid=root fsuid=root egid=root sgid=root fsgid=root tty=tty1 ses=1 comm=ausearch exe=/sbin/ausearch subj==unconfined key=(null) 
+----
+type=PROCTITLE msg=audit(04/22/2019 23:26:17.148:676) : proctitle=grep --color=auto cmd -B 3 
+--
+type=PATH msg=audit(04/22/2019 23:26:17.148:676) : item=0 name=/bin/grep inode=1048641 dev=08:02 mode=file,755 ouid=root ogid=root rdev=00:00 nametype=NORMAL cap_fp=none cap_fi=none cap_fe=0 cap_fver=0 
+type=CWD msg=audit(04/22/2019 23:26:17.148:676) : cwd=/var/www/FlaskApp/FlaskApp/Capstone 
+type=EXECVE msg=audit(04/22/2019 23:26:17.148:676) : argc=5 a0=grep a1=--color=auto a2=cmd a3=-B a4=3 
+--
+type=SYSCALL msg=audit(04/22/2019 23:26:17.148:675) : arch=x86_64 syscall=execve success=yes exit=0 a0=0x55bdf5813eb0 a1=0x55bdf5814130 a2=0x55bdf57ea6c0 a3=0x8 items=2 ppid=1776 pid=3647 auid=user uid=root gid=root euid=root suid=root fsuid=root egid=root sgid=root fsgid=root tty=tty1 ses=1 comm=tr exe=/usr/bin/tr subj==unconfined key=(null) 
+----
+type=PROCTITLE msg=audit(04/22/2019 23:26:34.565:679) : proctitle=grep --color=auto cmd -B 3 
+--
+type=PATH msg=audit(04/22/2019 23:26:34.565:679) : item=0 name=/bin/grep inode=1048641 dev=08:02 mode=file,755 ouid=root ogid=root rdev=00:00 nametype=NORMAL cap_fp=none cap_fi=none cap_fe=0 cap_fver=0 
+type=CWD msg=audit(04/22/2019 23:26:34.565:679) : cwd=/var/www/FlaskApp/FlaskApp/Capstone 
+type=EXECVE msg=audit(04/22/2019 23:26:34.565:679) : argc=5 a0=grep a1=--color=auto a2=cmd a3=-B a4=3 
+--
+type=SYSCALL msg=audit(04/22/2019 23:26:34.565:678) : arch=x86_64 syscall=execve success=yes exit=0 a0=0x55bdf5813380 a1=0x55bdf5814130 a2=0x55bdf57ea6c0 a3=0x8 items=2 ppid=1776 pid=3650 auid=user uid=root gid=root euid=root suid=root fsuid=root egid=root sgid=root fsgid=root tty=tty1 ses=1 comm=tr exe=/usr/bin/tr subj==unconfined key=(null) 
+----
+type=PROCTITLE msg=audit(04/22/2019 23:26:43.513:682) : proctitle=grep --color=auto cmd -B 3 
+--
+type=PATH msg=audit(04/22/2019 23:26:43.513:682) : item=0 name=/bin/grep inode=1048641 dev=08:02 mode=file,755 ouid=root ogid=root rdev=00:00 nametype=NORMAL cap_fp=none cap_fi=none cap_fe=0 cap_fver=0 
+type=CWD msg=audit(04/22/2019 23:26:43.513:682) : cwd=/var/www/FlaskApp/FlaskApp/Capstone 
+type=EXECVE msg=audit(04/22/2019 23:26:43.513:682) : argc=5 a0=grep a1=--color=auto a2=cmd a3=-B a4=3 
+--
+type=SYSCALL msg=audit(04/22/2019 23:26:43.513:681) : arch=x86_64 syscall=execve success=yes exit=0 a0=0x55bdf583f340 a1=0x55bdf5814130 a2=0x55bdf57ea6c0 a3=0x8 items=2 ppid=1776 pid=3654 auid=user uid=root gid=root euid=root suid=root fsuid=root egid=root sgid=root fsgid=root tty=tty1 ses=1 comm=tr exe=/usr/bin/tr subj==unconfined key=(null) 
+----
+type=PROCTITLE msg=audit(04/22/2019 23:27:06.633:685) : proctitle=grep --color=auto cmd -B 3 
+--
+type=PATH msg=audit(04/22/2019 23:27:06.633:685) : item=0 name=/bin/grep inode=1048641 dev=08:02 mode=file,755 ouid=root ogid=root rdev=00:00 nametype=NORMAL cap_fp=none cap_fi=none cap_fe=0 cap_fver=0 
+type=CWD msg=audit(04/22/2019 23:27:06.633:685) : cwd=/var/www/FlaskApp/FlaskApp/Capstone 
+type=EXECVE msg=audit(04/22/2019 23:27:06.633:685) : argc=5 a0=grep a1=--color=auto a2=cmd a3=-B a4=3 
+--
+type=SYSCALL msg=audit(04/22/2019 23:33:03.573:688) : arch=x86_64 syscall=execve success=yes exit=0 a0=0x55bdf5814080 a1=0x55bdf583e030 a2=0x55bdf57ea6c0 a3=0x8 items=2 ppid=1776 pid=3659 auid=user uid=root gid=root euid=root suid=root fsuid=root egid=root sgid=root fsgid=root tty=tty1 ses=1 comm=ausearch exe=/sbin/ausearch subj==unconfined key=(null) 
+----
+type=PROCTITLE msg=audit(04/22/2019 23:33:03.569:687) : proctitle=grep --color=auto cmd -B 3 
+--
+type=PATH msg=audit(04/22/2019 23:33:03.569:687) : item=0 name=/bin/grep inode=1048641 dev=08:02 mode=file,755 ouid=root ogid=root rdev=00:00 nametype=NORMAL cap_fp=none cap_fi=none cap_fe=0 cap_fver=0 
+type=CWD msg=audit(04/22/2019 23:33:03.569:687) : cwd=/var/www/FlaskApp/FlaskApp/Capstone 
+type=EXECVE msg=audit(04/22/2019 23:33:03.569:687) : argc=5 a0=grep a1=--color=auto a2=cmd a3=-B a4=3 
+--
+type=SYSCALL msg=audit(04/22/2019 23:33:15.589:690) : arch=x86_64 syscall=execve success=yes exit=0 a0=0x55bdf5834f40 a1=0x55bdf583f180 a2=0x55bdf57ea6c0 a3=0x8 items=2 ppid=1776 pid=3662 auid=user uid=root gid=root euid=root suid=root fsuid=root egid=root sgid=root fsgid=root tty=tty1 ses=1 comm=ausearch exe=/sbin/ausearch subj==unconfined key=(null) 
+----
+type=PROCTITLE msg=audit(04/22/2019 23:33:15.585:689) : proctitle=grep --color=auto cmd -B 
+--
+type=PATH msg=audit(04/22/2019 23:33:15.585:689) : item=0 name=/bin/grep inode=1048641 dev=08:02 mode=file,755 ouid=root ogid=root rdev=00:00 nametype=NORMAL cap_fp=none cap_fi=none cap_fe=0 cap_fver=0 
+type=CWD msg=audit(04/22/2019 23:33:15.585:689) : cwd=/var/www/FlaskApp/FlaskApp/Capstone 
+type=EXECVE msg=audit(04/22/2019 23:33:15.585:689) : argc=4 a0=grep a1=--color=auto a2=cmd a3=-B 
+--
+type=SYSCALL msg=audit(04/22/2019 23:33:18.629:692) : arch=x86_64 syscall=execve success=yes exit=0 a0=0x55bdf5814260 a1=0x55bdf583e280 a2=0x55bdf57ea6c0 a3=0x8 items=2 ppid=1776 pid=3664 auid=user uid=root gid=root euid=root suid=root fsuid=root egid=root sgid=root fsgid=root tty=tty1 ses=1 comm=ausearch exe=/sbin/ausearch subj==unconfined key=(null) 
+----
+type=PROCTITLE msg=audit(04/22/2019 23:33:18.629:691) : proctitle=grep --color=auto cmd 
+--
+type=PATH msg=audit(04/22/2019 23:33:18.629:691) : item=0 name=/bin/grep inode=1048641 dev=08:02 mode=file,755 ouid=root ogid=root rdev=00:00 nametype=NORMAL cap_fp=none cap_fi=none cap_fe=0 cap_fver=0 
+type=CWD msg=audit(04/22/2019 23:33:18.629:691) : cwd=/var/www/FlaskApp/FlaskApp/Capstone 
+type=EXECVE msg=audit(04/22/2019 23:33:18.629:691) : argc=3 a0=grep a1=--color=auto a2=cmd 
+--
+type=SYSCALL msg=audit(04/22/2019 23:33:39.662:694) : arch=x86_64 syscall=execve success=yes exit=0 a0=0x55bdf58142c0 a1=0x55bdf5813910 a2=0x55bdf57ea6c0 a3=0x8 items=2 ppid=1776 pid=3666 auid=user uid=root gid=root euid=root suid=root fsuid=root egid=root sgid=root fsgid=root tty=tty1 ses=1 comm=ausearch exe=/sbin/ausearch subj==unconfined key=(null) 
+----
+type=PROCTITLE msg=audit(04/22/2019 23:33:39.662:693) : proctitle=grep --color=auto cmd -B 3 
+--
+type=PATH msg=audit(04/22/2019 23:33:39.662:693) : item=0 name=/bin/grep inode=1048641 dev=08:02 mode=file,755 ouid=root ogid=root rdev=00:00 nametype=NORMAL cap_fp=none cap_fi=none cap_fe=0 cap_fver=0 
+type=CWD msg=audit(04/22/2019 23:33:39.662:693) : cwd=/var/www/FlaskApp/FlaskApp/Capstone 
+type=EXECVE msg=audit(04/22/2019 23:33:39.662:693) : argc=5 a0=grep a1=--color=auto a2=cmd a3=-B a4=3 
+--
+type=SYSCALL msg=audit(04/22/2019 23:33:44.974:696) : arch=x86_64 syscall=execve success=yes exit=0 a0=0x55bdf58141b0 a1=0x55bdf583e2e0 a2=0x55bdf57ea6c0 a3=0x8 items=2 ppid=1776 pid=3668 auid=user uid=root gid=root euid=root suid=root fsuid=root egid=root sgid=root fsgid=root tty=tty1 ses=1 comm=ausearch exe=/sbin/ausearch subj==unconfined key=(null) 
+----
+type=PROCTITLE msg=audit(04/22/2019 23:33:44.974:695) : proctitle=grep --color=auto cmd 
+--
+type=PATH msg=audit(04/22/2019 23:33:44.974:695) : item=0 name=/bin/grep inode=1048641 dev=08:02 mode=file,755 ouid=root ogid=root rdev=00:00 nametype=NORMAL cap_fp=none cap_fi=none cap_fe=0 cap_fver=0 
+type=CWD msg=audit(04/22/2019 23:33:44.974:695) : cwd=/var/www/FlaskApp/FlaskApp/Capstone 
+type=EXECVE msg=audit(04/22/2019 23:33:44.974:695) : argc=3 a0=grep a1=--color=auto a2=cmd 
+--
+type=SYSCALL msg=audit(04/22/2019 23:33:50.318:698) : arch=x86_64 syscall=execve success=yes exit=0 a0=0x55bdf583f280 a1=0x55bdf58140c0 a2=0x55bdf57ea6c0 a3=0x8 items=2 ppid=1776 pid=3670 auid=user uid=root gid=root euid=root suid=root fsuid=root egid=root sgid=root fsgid=root tty=tty1 ses=1 comm=ausearch exe=/sbin/ausearch subj==unconfined key=(null) 
+----
+type=PROCTITLE msg=audit(04/22/2019 23:33:50.314:697) : proctitle=grep --color=auto cmd -B 3 
+--
+type=PATH msg=audit(04/22/2019 23:33:50.314:697) : item=0 name=/bin/grep inode=1048641 dev=08:02 mode=file,755 ouid=root ogid=root rdev=00:00 nametype=NORMAL cap_fp=none cap_fi=none cap_fe=0 cap_fver=0 
+type=CWD msg=audit(04/22/2019 23:33:50.314:697) : cwd=/var/www/FlaskApp/FlaskApp/Capstone 
+type=EXECVE msg=audit(04/22/2019 23:33:50.314:697) : argc=5 a0=grep a1=--color=auto a2=cmd a3=-B a4=3 
+--
+type=SYSCALL msg=audit(04/22/2019 23:35:24.939:700) : arch=x86_64 syscall=execve success=yes exit=0 a0=0x55bdf5814010 a1=0x55bdf583e2b0 a2=0x55bdf57ea6c0 a3=0x8 items=2 ppid=1776 pid=3673 auid=user uid=root gid=root euid=root suid=root fsuid=root egid=root sgid=root fsgid=root tty=tty1 ses=1 comm=ausearch exe=/sbin/ausearch subj==unconfined key=(null) 
+----
+type=PROCTITLE msg=audit(04/22/2019 23:35:24.939:699) : proctitle=grep --color=auto cmd -B 3 --group-separator 
+--
+type=PATH msg=audit(04/22/2019 23:35:24.939:699) : item=0 name=/bin/grep inode=1048641 dev=08:02 mode=file,755 ouid=root ogid=root rdev=00:00 nametype=NORMAL cap_fp=none cap_fi=none cap_fe=0 cap_fver=0 
+type=CWD msg=audit(04/22/2019 23:35:24.939:699) : cwd=/var/www/FlaskApp/FlaskApp/Capstone 
+type=EXECVE msg=audit(04/22/2019 23:35:24.939:699) : argc=6 a0=grep a1=--color=auto a2=cmd a3=-B a4=3 a5=--group-separator 
+--
+type=SYSCALL msg=audit(04/22/2019 23:35:30.395:702) : arch=x86_64 syscall=execve success=yes exit=0 a0=0x55bdf583d6b0 a1=0x55bdf583ef50 a2=0x55bdf57ea6c0 a3=0x8 items=2 ppid=1776 pid=3675 auid=user uid=root gid=root euid=root suid=root fsuid=root egid=root sgid=root fsgid=root tty=tty1 ses=1 comm=ausearch exe=/sbin/ausearch subj==unconfined key=(null) 
+----
+type=PROCTITLE msg=audit(04/22/2019 23:35:30.391:701) : proctitle=grep --color=auto cmd -B 3 
+--
+type=PATH msg=audit(04/22/2019 23:35:30.391:701) : item=0 name=/bin/grep inode=1048641 dev=08:02 mode=file,755 ouid=root ogid=root rdev=00:00 nametype=NORMAL cap_fp=none cap_fi=none cap_fe=0 cap_fver=0 
+type=CWD msg=audit(04/22/2019 23:35:30.391:701) : cwd=/var/www/FlaskApp/FlaskApp/Capstone 
+type=EXECVE msg=audit(04/22/2019 23:35:30.391:701) : argc=5 a0=grep a1=--color=auto a2=cmd a3=-B a4=3 
+--
+type=SYSCALL msg=audit(04/23/2019 00:17:01.616:904) : arch=x86_64 syscall=execve success=yes exit=0 a0=0x55e4416fe628 a1=0x55e44140bc58 a2=0x55e4416fe5e8 a3=0x7f2c51af8850 items=2 ppid=4010 pid=4011 auid=root uid=root gid=root euid=root suid=root fsuid=root egid=root sgid=root fsgid=root tty=(none) ses=25 comm=run-parts exe=/bin/run-parts subj==unconfined key=(null) 
+----
+type=PROCTITLE msg=audit(04/23/2019 00:25:45.596:940) : proctitle=grep --color=auto cmd -B 3 
+--
+type=PATH msg=audit(04/23/2019 00:25:45.596:940) : item=0 name=/bin/grep inode=1048641 dev=08:02 mode=file,755 ouid=root ogid=root rdev=00:00 nametype=NORMAL cap_fp=none cap_fi=none cap_fe=0 cap_fver=0 
+type=CWD msg=audit(04/23/2019 00:25:45.596:940) : cwd=/var/www/FlaskApp/FlaskApp/Capstone 
+type=EXECVE msg=audit(04/23/2019 00:25:45.596:940) : argc=5 a0=grep a1=--color=auto a2=cmd a3=-B a4=3 
+--
+type=SYSCALL msg=audit(04/23/2019 00:26:02.872:943) : arch=x86_64 syscall=execve success=yes exit=0 a0=0x55bdf5814080 a1=0x55bdf583e220 a2=0x55bdf57ea6c0 a3=0x8 items=2 ppid=1776 pid=4076 auid=user uid=root gid=root euid=root suid=root fsuid=root egid=root sgid=root fsgid=root tty=tty1 ses=1 comm=ausearch exe=/sbin/ausearch subj==unconfined key=(null) 
+----
+type=PROCTITLE msg=audit(04/23/2019 00:26:02.872:942) : proctitle=grep --color=auto cmd -B 3 
+--
+type=PATH msg=audit(04/23/2019 00:26:02.872:942) : item=0 name=/bin/grep inode=1048641 dev=08:02 mode=file,755 ouid=root ogid=root rdev=00:00 nametype=NORMAL cap_fp=none cap_fi=none cap_fe=0 cap_fver=0 
+type=CWD msg=audit(04/23/2019 00:26:02.872:942) : cwd=/var/www/FlaskApp/FlaskApp/Capstone 
+type=EXECVE msg=audit(04/23/2019 00:26:02.872:942) : argc=5 a0=grep a1=--color=auto a2=cmd a3=-B a4=3 
+--
+type=SYSCALL msg=audit(04/23/2019 00:28:49.494:958) : arch=x86_64 syscall=execve success=yes exit=0 a0=0x55bdf58141b0 a1=0x55bdf58148a0 a2=0x55bdf57ea6c0 a3=0x8 items=2 ppid=1776 pid=4095 auid=user uid=root gid=root euid=root suid=root fsuid=root egid=root sgid=root fsgid=root tty=tty1 ses=1 comm=ls exe=/bin/ls subj==unconfined key=(null) 
+----
+type=PROCTITLE msg=audit(04/23/2019 00:28:51.298:959) : proctitle=grep --color=auto cmd -B 3 
+--
+type=PATH msg=audit(04/23/2019 00:28:51.298:959) : item=0 name=/bin/grep inode=1048641 dev=08:02 mode=file,755 ouid=root ogid=root rdev=00:00 nametype=NORMAL cap_fp=none cap_fi=none cap_fe=0 cap_fver=0 
+type=CWD msg=audit(04/23/2019 00:28:51.298:959) : cwd=/var/www/FlaskApp/FlaskApp/Capstone 
+type=EXECVE msg=audit(04/23/2019 00:28:51.298:959) : argc=5 a0=grep a1=--color=auto a2=cmd a3=-B a4=3 
+type=SYSCALL msg=audit(04/23/2019 00:28:51.298:959) : arch=x86_64 syscall=execve success=yes exit=0 a0=0x55bdf583d6b0 a1=0x55bdf5813dd0 a2=0x55bdf57ea6c0 a3=0x1b6 items=2 ppid=1776 pid=4097 auid=user uid=root gid=root euid=root suid=root fsuid=root egid=root sgid=root fsgid=root tty=tty1 ses=1 comm=grep exe=/bin/grep subj==unconfined key=(null) 
+----
+type=PROCTITLE msg=audit(04/23/2019 00:31:29.083:970) : proctitle=grep --color=auto cmd 
+--
+type=PATH msg=audit(04/23/2019 00:31:29.083:970) : item=0 name=/bin/grep inode=1048641 dev=08:02 mode=file,755 ouid=root ogid=root rdev=00:00 nametype=NORMAL cap_fp=none cap_fi=none cap_fe=0 cap_fver=0 
+type=CWD msg=audit(04/23/2019 00:31:29.083:970) : cwd=/var/www/FlaskApp/FlaskApp/Capstone 
+type=EXECVE msg=audit(04/23/2019 00:31:29.083:970) : argc=3 a0=grep a1=--color=auto a2=cmd 
+--
+type=USER_ACCT msg=audit(04/23/2019 00:32:04.276:972) : pid=4111 uid=root auid=user ses=1 subj==unconfined msg='op=PAM:accounting acct=root exe=/usr/bin/sudo hostname=capstone_1 addr=? terminal=/dev/tty1 res=success' 
+----
+type=USER_CMD msg=audit(04/23/2019 00:32:04.276:973) : pid=4111 uid=root auid=user ses=1 subj==unconfined msg='cwd=/var/www/FlaskApp/FlaskApp/Capstone cmd=ls terminal=tty1 res=success' 
+--
+type=SYSCALL msg=audit(04/23/2019 00:32:04.280:976) : arch=x86_64 syscall=execve success=yes exit=0 a0=0x560cc79a4d48 a1=0x560cc799eeb8 a2=0x560cc799d670 a3=0x231 items=2 ppid=4111 pid=4112 auid=user uid=root gid=root euid=root suid=root fsuid=root egid=root sgid=root fsgid=root tty=tty1 ses=1 comm=ls exe=/bin/ls subj==unconfined key=(null) 
+----
+type=PROCTITLE msg=audit(04/23/2019 00:32:06.424:979) : proctitle=grep --color=auto cmd 
+--
+type=PATH msg=audit(04/23/2019 00:32:06.424:979) : item=0 name=/bin/grep inode=1048641 dev=08:02 mode=file,755 ouid=root ogid=root rdev=00:00 nametype=NORMAL cap_fp=none cap_fi=none cap_fe=0 cap_fver=0 
+type=CWD msg=audit(04/23/2019 00:32:06.424:979) : cwd=/var/www/FlaskApp/FlaskApp/Capstone 
+type=EXECVE msg=audit(04/23/2019 00:32:06.424:979) : argc=3 a0=grep a1=--color=auto a2=cmd 
+--
+type=SYSCALL msg=audit(04/23/2019 00:35:40.110:989) : arch=x86_64 syscall=execve success=yes exit=0 a0=0x55bdf58149a0 a1=0x55bdf583dfe0 a2=0x55bdf57ea6c0 a3=0x8 items=2 ppid=1776 pid=4128 auid=user uid=root gid=root euid=root suid=root fsuid=root egid=root sgid=root fsgid=root tty=tty1 ses=1 comm=ausearch exe=/sbin/ausearch subj==unconfined key=(null) 
+----
+type=PROCTITLE msg=audit(04/23/2019 00:35:40.110:988) : proctitle=grep --color=auto cmd -B 3 
+--
+type=PATH msg=audit(04/23/2019 00:35:40.110:988) : item=0 name=/bin/grep inode=1048641 dev=08:02 mode=file,755 ouid=root ogid=root rdev=00:00 nametype=NORMAL cap_fp=none cap_fi=none cap_fe=0 cap_fver=0 
+type=CWD msg=audit(04/23/2019 00:35:40.110:988) : cwd=/var/www/FlaskApp/FlaskApp/Capstone 
+type=EXECVE msg=audit(04/23/2019 00:35:40.110:988) : argc=5 a0=grep a1=--color=auto a2=cmd a3=-B a4=3 
+--
+type=SYSCALL msg=audit(04/23/2019 00:37:07.798:997) : arch=x86_64 syscall=execve success=yes exit=0 a0=0x55bdf5813e50 a1=0x55bdf583e450 a2=0x55bdf57ea6c0 a3=0x8 items=2 ppid=1776 pid=4138 auid=user uid=root gid=root euid=root suid=root fsuid=root egid=root sgid=root fsgid=root tty=tty1 ses=1 comm=ausearch exe=/sbin/ausearch subj==unconfined key=(null) 
+----
+type=PROCTITLE msg=audit(04/23/2019 00:37:07.798:996) : proctitle=grep --color=auto cmd -B 3 
+--
+type=PATH msg=audit(04/23/2019 00:37:07.798:996) : item=0 name=/bin/grep inode=1048641 dev=08:02 mode=file,755 ouid=root ogid=root rdev=00:00 nametype=NORMAL cap_fp=none cap_fi=none cap_fe=0 cap_fver=0 
+type=CWD msg=audit(04/23/2019 00:37:07.798:996) : cwd=/var/www/FlaskApp/FlaskApp/Capstone 
+type=EXECVE msg=audit(04/23/2019 00:37:07.798:996) : argc=5 a0=grep a1=--color=auto a2=cmd a3=-B a4=3 
+--
+type=USER_ACCT msg=audit(04/23/2019 00:37:46.635:999) : pid=4141 uid=root auid=user ses=1 subj==unconfined msg='op=PAM:accounting acct=root exe=/usr/bin/sudo hostname=capstone_1 addr=? terminal=/dev/tty1 res=success' 
+----
+type=USER_CMD msg=audit(04/23/2019 00:37:46.635:1000) : pid=4141 uid=root auid=user ses=1 subj==unconfined msg='cwd=/var/www/FlaskApp/FlaskApp/Capstone cmd=ls terminal=tty1 res=success' 
+--
+type=SYSCALL msg=audit(04/23/2019 00:37:49.183:1007) : arch=x86_64 syscall=execve success=yes exit=0 a0=0x55bdf58141b0 a1=0x55bdf583e1a0 a2=0x55bdf57ea6c0 a3=0x8 items=2 ppid=1776 pid=4143 auid=user uid=root gid=root euid=root suid=root fsuid=root egid=root sgid=root fsgid=root tty=tty1 ses=1 comm=ausearch exe=/sbin/ausearch subj==unconfined key=(null) 
+----
+type=PROCTITLE msg=audit(04/23/2019 00:37:49.179:1006) : proctitle=grep --color=auto cmd -B 3 
+--
+type=PATH msg=audit(04/23/2019 00:37:49.179:1006) : item=0 name=/bin/grep inode=1048641 dev=08:02 mode=file,755 ouid=root ogid=root rdev=00:00 nametype=NORMAL cap_fp=none cap_fi=none cap_fe=0 cap_fver=0 
+type=CWD msg=audit(04/23/2019 00:37:49.179:1006) : cwd=/var/www/FlaskApp/FlaskApp/Capstone 
+type=EXECVE msg=audit(04/23/2019 00:37:49.179:1006) : argc=5 a0=grep a1=--color=auto a2=cmd a3=-B a4=3 
+--
+type=USER_ACCT msg=audit(04/23/2019 00:38:21.323:1009) : pid=4145 uid=root auid=user ses=1 subj==unconfined msg='op=PAM:accounting acct=root exe=/usr/bin/sudo hostname=capstone_1 addr=? terminal=/dev/tty1 res=success' 
+----
+type=USER_CMD msg=audit(04/23/2019 00:38:21.327:1010) : pid=4145 uid=root auid=user ses=1 subj==unconfined msg='cwd=/var/www/FlaskApp/FlaskApp/Capstone cmd=ls terminal=tty1 res=success' 
+--
+type=USER_ACCT msg=audit(04/23/2019 00:38:21.347:1017) : pid=4147 uid=root auid=user ses=1 subj==unconfined msg='op=PAM:accounting acct=root exe=/usr/bin/sudo hostname=capstone_1 addr=? terminal=/dev/tty1 res=success' 
+----
+type=USER_CMD msg=audit(04/23/2019 00:38:21.351:1018) : pid=4147 uid=root auid=user ses=1 subj==unconfined msg='cwd=/var/www/FlaskApp/FlaskApp/Capstone cmd=pwd terminal=tty1 res=success' 
+--
+type=SYSCALL msg=audit(04/23/2019 00:38:31.239:1025) : arch=x86_64 syscall=execve success=yes exit=0 a0=0x55bdf5814010 a1=0x55bdf5814b80 a2=0x55bdf57ea6c0 a3=0x8 items=2 ppid=1776 pid=4149 auid=user uid=root gid=root euid=root suid=root fsuid=root egid=root sgid=root fsgid=root tty=tty1 ses=1 comm=ausearch exe=/sbin/ausearch subj==unconfined key=(null) 
+----
+type=PROCTITLE msg=audit(04/23/2019 00:38:31.235:1024) : proctitle=grep --color=auto cmd 
+--
+type=PATH msg=audit(04/23/2019 00:38:31.235:1024) : item=0 name=/bin/grep inode=1048641 dev=08:02 mode=file,755 ouid=root ogid=root rdev=00:00 nametype=NORMAL cap_fp=none cap_fi=none cap_fe=0 cap_fver=0 
+type=CWD msg=audit(04/23/2019 00:38:31.235:1024) : cwd=/var/www/FlaskApp/FlaskApp/Capstone 
+type=EXECVE msg=audit(04/23/2019 00:38:31.235:1024) : argc=3 a0=grep a1=--color=auto a2=cmd 
+--
+type=SYSCALL msg=audit(04/23/2019 00:38:54.739:1026) : arch=x86_64 syscall=execve success=yes exit=0 a0=0x55bdf5814cf0 a1=0x55bdf5814710 a2=0x55bdf57ea6c0 a3=0x8 items=2 ppid=1776 pid=4151 auid=user uid=root gid=root euid=root suid=root fsuid=root egid=root sgid=root fsgid=root tty=tty1 ses=1 comm=ps exe=/bin/ps subj==unconfined key=(null) 
+----
+type=PROCTITLE msg=audit(04/23/2019 00:39:38.692:1027) : proctitle=grep --color=auto cmd 
+--
+type=PATH msg=audit(04/23/2019 00:39:38.692:1027) : item=0 name=/bin/grep inode=1048641 dev=08:02 mode=file,755 ouid=root ogid=root rdev=00:00 nametype=NORMAL cap_fp=none cap_fi=none cap_fe=0 cap_fver=0 
+type=CWD msg=audit(04/23/2019 00:39:38.692:1027) : cwd=/var/www/FlaskApp/FlaskApp/Capstone 
+type=EXECVE msg=audit(04/23/2019 00:39:38.692:1027) : argc=3 a0=grep a1=--color=auto a2=cmd 
+--
+type=SYSCALL msg=audit(04/23/2019 00:40:06.940:1030) : arch=x86_64 syscall=execve success=yes exit=0 a0=0x55bdf58143e0 a1=0x55bdf583e400 a2=0x55bdf57ea6c0 a3=0x1 items=2 ppid=1776 pid=4155 auid=user uid=root gid=root euid=root suid=root fsuid=root egid=root sgid=root fsgid=root tty=tty1 ses=1 comm=ausearch exe=/sbin/ausearch subj==unconfined key=(null) 
+----
+type=PROCTITLE msg=audit(04/23/2019 00:40:06.940:1029) : proctitle=grep --color=auto cmd -B 3 
+--
+type=PATH msg=audit(04/23/2019 00:40:06.940:1029) : item=0 name=/bin/grep inode=1048641 dev=08:02 mode=file,755 ouid=root ogid=root rdev=00:00 nametype=NORMAL cap_fp=none cap_fi=none cap_fe=0 cap_fver=0 
+type=CWD msg=audit(04/23/2019 00:40:06.940:1029) : cwd=/var/www/FlaskApp/FlaskApp/Capstone 
+type=EXECVE msg=audit(04/23/2019 00:40:06.940:1029) : argc=5 a0=grep a1=--color=auto a2=cmd a3=-B a4=3 
+--
+type=SYSCALL msg=audit(04/23/2019 00:40:14.556:1032) : arch=x86_64 syscall=execve success=yes exit=0 a0=0x55bdf5814dd0 a1=0x55bdf583e450 a2=0x55bdf57ea6c0 a3=0x8 items=2 ppid=1776 pid=4157 auid=user uid=root gid=root euid=root suid=root fsuid=root egid=root sgid=root fsgid=root tty=tty1 ses=1 comm=ausearch exe=/sbin/ausearch subj==unconfined key=(null) 
+----
+type=PROCTITLE msg=audit(04/23/2019 00:40:14.556:1031) : proctitle=grep --color=auto cmd -B 3 
+--
+type=PATH msg=audit(04/23/2019 00:40:14.556:1031) : item=0 name=/bin/grep inode=1048641 dev=08:02 mode=file,755 ouid=root ogid=root rdev=00:00 nametype=NORMAL cap_fp=none cap_fi=none cap_fe=0 cap_fver=0 
+type=CWD msg=audit(04/23/2019 00:40:14.556:1031) : cwd=/var/www/FlaskApp/FlaskApp/Capstone 
+type=EXECVE msg=audit(04/23/2019 00:40:14.556:1031) : argc=5 a0=grep a1=--color=auto a2=cmd a3=-B a4=3 
+--
+type=SYSCALL msg=audit(04/23/2019 00:43:30.702:1040) : arch=x86_64 syscall=execve success=yes exit=0 a0=0x55bdf583eff0 a1=0x55bdf583e400 a2=0x55bdf57ea6c0 a3=0x8 items=2 ppid=1776 pid=4167 auid=user uid=root gid=root euid=root suid=root fsuid=root egid=root sgid=root fsgid=root tty=tty1 ses=1 comm=ausearch exe=/sbin/ausearch subj==unconfined key=(null) 
+----
+type=PROCTITLE msg=audit(04/23/2019 00:43:30.702:1039) : proctitle=grep --color=auto cmd -B 1 
+--
+type=PATH msg=audit(04/23/2019 00:43:30.702:1039) : item=0 name=/bin/grep inode=1048641 dev=08:02 mode=file,755 ouid=root ogid=root rdev=00:00 nametype=NORMAL cap_fp=none cap_fi=none cap_fe=0 cap_fver=0 
+type=CWD msg=audit(04/23/2019 00:43:30.702:1039) : cwd=/var/www/FlaskApp/FlaskApp/Capstone 
+type=EXECVE msg=audit(04/23/2019 00:43:30.702:1039) : argc=5 a0=grep a1=--color=auto a2=cmd a3=-B a4=1 
+--
+type=SYSCALL msg=audit(04/23/2019 00:43:36.586:1042) : arch=x86_64 syscall=execve success=yes exit=0 a0=0x55bdf5814ea0 a1=0x55bdf583e530 a2=0x55bdf57ea6c0 a3=0x8 items=2 ppid=1776 pid=4169 auid=user uid=root gid=root euid=root suid=root fsuid=root egid=root sgid=root fsgid=root tty=tty1 ses=1 comm=ausearch exe=/sbin/ausearch subj==unconfined key=(null) 
+----
+type=PROCTITLE msg=audit(04/23/2019 00:43:36.586:1041) : proctitle=grep --color=auto cmd -B 1 
+--
+type=PATH msg=audit(04/23/2019 00:43:36.586:1041) : item=0 name=/bin/grep inode=1048641 dev=08:02 mode=file,755 ouid=root ogid=root rdev=00:00 nametype=NORMAL cap_fp=none cap_fi=none cap_fe=0 cap_fver=0 
+type=CWD msg=audit(04/23/2019 00:43:36.586:1041) : cwd=/var/www/FlaskApp/FlaskApp/Capstone 
+type=EXECVE msg=audit(04/23/2019 00:43:36.586:1041) : argc=5 a0=grep a1=--color=auto a2=cmd a3=-B a4=1 
+--
+type=SYSCALL msg=audit(04/23/2019 00:44:21.294:1044) : arch=x86_64 syscall=execve success=yes exit=0 a0=0x55bdf58143e0 a1=0x55bdf583e400 a2=0x55bdf57ea6c0 a3=0x8 items=2 ppid=1776 pid=4172 auid=user uid=root gid=root euid=root suid=root fsuid=root egid=root sgid=root fsgid=root tty=tty1 ses=1 comm=ausearch exe=/sbin/ausearch subj==unconfined key=(null) 
+----
+type=PROCTITLE msg=audit(04/23/2019 00:44:21.294:1043) : proctitle=grep --color=auto cmd -B 2 
+--
+type=PATH msg=audit(04/23/2019 00:44:21.294:1043) : item=0 name=/bin/grep inode=1048641 dev=08:02 mode=file,755 ouid=root ogid=root rdev=00:00 nametype=NORMAL cap_fp=none cap_fi=none cap_fe=0 cap_fver=0 
+type=CWD msg=audit(04/23/2019 00:44:21.294:1043) : cwd=/var/www/FlaskApp/FlaskApp/Capstone 
+type=EXECVE msg=audit(04/23/2019 00:44:21.294:1043) : argc=5 a0=grep a1=--color=auto a2=cmd a3=-B a4=2 
+--
+type=SYSCALL msg=audit(04/23/2019 00:44:47.302:1046) : arch=x86_64 syscall=execve success=yes exit=0 a0=0x55bdf5814df0 a1=0x55bdf583e1a0 a2=0x55bdf57ea6c0 a3=0x8 items=2 ppid=1776 pid=4175 auid=user uid=root gid=root euid=root suid=root fsuid=root egid=root sgid=root fsgid=root tty=tty1 ses=1 comm=ausearch exe=/sbin/ausearch subj==unconfined key=(null) 
+----
+type=PROCTITLE msg=audit(04/23/2019 00:44:47.298:1045) : proctitle=grep --color=auto cmd -B 2 
+--
+type=PATH msg=audit(04/23/2019 00:44:47.298:1045) : item=0 name=/bin/grep inode=1048641 dev=08:02 mode=file,755 ouid=root ogid=root rdev=00:00 nametype=NORMAL cap_fp=none cap_fi=none cap_fe=0 cap_fver=0 
+type=CWD msg=audit(04/23/2019 00:44:47.298:1045) : cwd=/var/www/FlaskApp/FlaskApp/Capstone 
+type=EXECVE msg=audit(04/23/2019 00:44:47.298:1045) : argc=5 a0=grep a1=--color=auto a2=cmd a3=-B a4=2 
+--
+type=USER_ACCT msg=audit(04/23/2019 00:45:50.607:1054) : pid=4185 uid=root auid=user ses=1 subj==unconfined msg='op=PAM:accounting acct=root exe=/usr/bin/sudo hostname=capstone_1 addr=? terminal=/dev/tty1 res=success' 
+----
+type=USER_CMD msg=audit(04/23/2019 00:45:50.607:1055) : pid=4185 uid=root auid=user ses=1 subj==unconfined msg='cwd=/var/www/FlaskApp/FlaskApp/Capstone cmd=ls terminal=tty1 res=success' 
+--
+type=USER_ACCT msg=audit(04/23/2019 00:45:53.479:1062) : pid=4187 uid=root auid=user ses=1 subj==unconfined msg='op=PAM:accounting acct=root exe=/usr/bin/sudo hostname=capstone_1 addr=? terminal=/dev/tty1 res=success' 
+----
+type=USER_CMD msg=audit(04/23/2019 00:45:53.479:1063) : pid=4187 uid=root auid=user ses=1 subj==unconfined msg='cwd=/var/www/FlaskApp/FlaskApp/Capstone cmd=pwd terminal=tty1 res=success' 
+--
+type=SYSCALL msg=audit(04/23/2019 00:45:57.079:1070) : arch=x86_64 syscall=execve success=yes exit=0 a0=0x55bdf5814f20 a1=0x55bdf583e450 a2=0x55bdf57ea6c0 a3=0x8 items=2 ppid=1776 pid=4189 auid=user uid=root gid=root euid=root suid=root fsuid=root egid=root sgid=root fsgid=root tty=tty1 ses=1 comm=ausearch exe=/sbin/ausearch subj==unconfined key=(null) 
+----
+type=PROCTITLE msg=audit(04/23/2019 00:45:57.075:1069) : proctitle=grep --color=auto cmd -B 2 
+--
+type=PATH msg=audit(04/23/2019 00:45:57.075:1069) : item=0 name=/bin/grep inode=1048641 dev=08:02 mode=file,755 ouid=root ogid=root rdev=00:00 nametype=NORMAL cap_fp=none cap_fi=none cap_fe=0 cap_fver=0 
+type=CWD msg=audit(04/23/2019 00:45:57.075:1069) : cwd=/var/www/FlaskApp/FlaskApp/Capstone 
+type=EXECVE msg=audit(04/23/2019 00:45:57.075:1069) : argc=5 a0=grep a1=--color=auto a2=cmd a3=-B a4=2 
