@@ -59,7 +59,7 @@ def parse(lines):
         pid = "none"
 
 
-    if cmd !="none":
+    if cmd !="none" or a2 !="none":
         print auid +" "
         print uid +" "
         print time  +" "
