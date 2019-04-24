@@ -18,7 +18,6 @@ def main(argv):
 
 def parse(lines):
     lines = str(lines)
-    print lines
     cmd = re.search(r'(?<=\scmd=)[a-z]+',lines)
     if cmd:
         cmd = cmd.group(0)
@@ -36,7 +35,6 @@ def parse(lines):
         auid= "none"
     time = re.search("([0-9]+\/[0-9]+\/[0-9]+ [0-9]+:[0-9]+:[0-9]+.[0-9]+:[0-9]+)",lines)
     if time:
-        print time
         time=time.group(0)
     else:
         time ="none"
@@ -45,11 +43,28 @@ def parse(lines):
         proctitle = proctitle.group(0)
     else:
         proctitle = "none"
+    type = re.search('type=EXECVE',lines)
+    a2 = re.search('(?<=\sa2=)(.*),',lines)
+    if type: 
+        if a2:
+            a2 = a2.group(0)
+        else:
+            a2 = "none"
+    else:
+        a2 = "none"
+    pid = re.search('(?<=pid=)[0-9]+',lines)
+    if pid:
+        pid = pid.group(0)
+    else:
+        pid = "none"
+
     print auid +" "
     print uid +" "
     print time  +" "
     print cmd +" "
     print proctitle
+    print a2
+    print pid + "\n"
 
 if __name__ == '__main__':
     main(sys.argv[1:])
