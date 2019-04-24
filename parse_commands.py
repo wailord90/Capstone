@@ -3,7 +3,7 @@ import re
 import sys
 
 def main(argv):
-    print("yup")
+    
     os.system("ausearch -ua root -i | grep cmd -B 3 > tmpfile.txt")
     with open('tmpfile.txt', 'r') as infile:
         lines = []
@@ -58,13 +58,16 @@ def parse(lines):
     else:
         pid = "none"
 
-    print auid +" "
-    print uid +" "
-    print time  +" "
-    print cmd +" "
-    print proctitle
-    print a2
-    print pid + "\n"
+
+    if cmd !="none":
+        print auid +" "
+        print uid +" "
+        print time  +" "
+        print cmd +" "
+        print proctitle
+        print a2
+        print pid + "\n"
+
 
 if __name__ == '__main__':
     main(sys.argv[1:])
