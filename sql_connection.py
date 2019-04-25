@@ -9,8 +9,12 @@ db = SQLAlchemy(app)
 
 class User_Sessions(db.Model):
         id = db.Column(db.Integer, primary_key=True)
-	date = db.Column(db.DateTime,nullable=False)
-	user = db.Column(db.String(80),nullable=False)
+	uid = db.Column(db.String(80),nullable=False)
+        auid = db.Column(db.String(80),nullable=False)
+        cwd = db.Column(db.String(80),nullable=False)
+        time = db.Column(db.DateTime,nullable=False)
+        pid = db.Column(db.String(80),nullable=False)
+        a2 = db.Column(db.String(80),nullable=False)  
         def __repr__(self):
             return '|%r|%r|' % (self.date,self.user)
 class footage(db.Model):
