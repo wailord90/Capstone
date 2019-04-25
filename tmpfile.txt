@@ -607,3 +607,28 @@ type=USER_CMD msg=audit(04/23/2019 20:39:57.303:127) : pid=2130 uid=root auid=us
 type=USER_ACCT msg=audit(04/23/2019 20:40:00.660:132) : pid=2132 uid=root auid=user ses=1 subj==unconfined msg='op=PAM:accounting acct=root exe=/usr/bin/sudo hostname=capstone_1 addr=? terminal=/dev/tty1 res=success' 
 ----
 type=USER_CMD msg=audit(04/23/2019 20:40:00.660:133) : pid=2132 uid=root auid=user ses=1 subj==unconfined msg='cwd=/var/www/FlaskApp/FlaskApp/Capstone cmd=pwd terminal=tty1 res=success' 
+--
+----
+type=USER_ACCT msg=audit(04/24/2019 13:16:04.323:204) : pid=2904 uid=root auid=user ses=1 subj==unconfined msg='op=PAM:accounting acct=root exe=/usr/bin/sudo hostname=capstone_1 addr=? terminal=/dev/tty1 res=success' 
+----
+type=USER_CMD msg=audit(04/24/2019 13:16:04.327:205) : pid=2904 uid=root auid=user ses=1 subj==unconfined msg='cwd=/var/www/FlaskApp/FlaskApp/Capstone cmd=cat meep terminal=tty1 res=success' 
+--
+----
+type=USER_ACCT msg=audit(04/24/2019 13:16:15.143:210) : pid=2907 uid=root auid=user ses=1 subj==unconfined msg='op=PAM:accounting acct=root exe=/usr/bin/sudo hostname=capstone_1 addr=? terminal=/dev/tty1 res=success' 
+----
+type=USER_CMD msg=audit(04/24/2019 13:16:15.143:211) : pid=2907 uid=root auid=user ses=1 subj==unconfined msg='cwd=/var/www/FlaskApp/FlaskApp/Capstone cmd=echo meep terminal=tty1 res=success' 
+--
+----
+type=USER_ACCT msg=audit(04/24/2019 13:19:06.200:222) : pid=2939 uid=root auid=user ses=1 subj==unconfined msg='op=PAM:accounting acct=root exe=/usr/bin/sudo hostname=capstone_1 addr=? terminal=/dev/tty1 res=success' 
+----
+type=USER_CMD msg=audit(04/24/2019 13:19:06.204:223) : pid=2939 uid=root auid=user ses=1 subj==unconfined msg='cwd=/var/www/FlaskApp/FlaskApp/Capstone cmd=su terminal=tty1 res=success' 
+--
+----
+type=USER_ACCT msg=audit(04/24/2019 13:19:19.240:231) : pid=2952 uid=root auid=user ses=1 subj==unconfined msg='op=PAM:accounting acct=root exe=/usr/bin/sudo hostname=capstone_1 addr=? terminal=/dev/tty1 res=success' 
+----
+type=USER_CMD msg=audit(04/24/2019 13:19:19.240:232) : pid=2952 uid=root auid=user ses=1 subj==unconfined msg='cwd=/var/www/FlaskApp/FlaskApp/Capstone cmd=ls terminal=tty1 res=success' 
+--
+----
+type=USER_ACCT msg=audit(04/25/2019 01:53:42.729:237) : pid=2982 uid=root auid=user ses=1 subj==unconfined msg='op=PAM:accounting acct=root exe=/usr/bin/sudo hostname=capstone_1 addr=? terminal=/dev/tty1 res=success' 
+----
+type=USER_CMD msg=audit(04/25/2019 01:53:42.733:238) : pid=2982 uid=root auid=user ses=1 subj==unconfined msg='cwd=/var/www/FlaskApp/FlaskApp/Capstone cmd=ls terminal=tty1 res=success' 

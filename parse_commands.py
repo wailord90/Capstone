@@ -43,8 +43,8 @@ def parse(lines):
         proctitle = proctitle.group(0)
     else:
         proctitle = "none"
-    type = re.search('type=EXECVE',lines)
-    a2 = re.search('(?<=\sa2=)(.*),',lines)
+    type = re.search('a0=sh',lines)
+    a2 = re.search('(?<=\sa2=)(.+?),',lines)
     if type: 
         if a2:
             a2 = a2.group(0)
@@ -57,8 +57,12 @@ def parse(lines):
         pid = pid.group(0)
     else:
         pid = "none"
-
-
+    cwd = re.search('(?<=cwd=).+?\s',lines)
+    if cwd:
+        cwd = cwd.group(0)
+    else:
+        cwd = "none"
+    print lines
     if cmd !="none" or a2 !="none":
         print auid +" "
         print uid +" "
@@ -67,6 +71,7 @@ def parse(lines):
         print proctitle
         print a2
         print pid + "\n"
+        print cwd
 
 
 if __name__ == '__main__':
