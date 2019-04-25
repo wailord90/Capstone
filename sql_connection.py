@@ -17,7 +17,7 @@ class User_Sessions(db.Model):
     a2 = db.Column(db.String(80), nullable=False)
 
     def __repr__(self):
-        return '|%r|%r|' % (self.date, self.user)
+        return '|%r|%r|%r|%r|%r|%r|' % (self.time, self.uid, self.auid, self.cwd, self.pid, self.a2)
 
 
 class footage(db.Model):
