@@ -68,7 +68,7 @@ def parse(lines):
     print lines
     if cmd != "none" or a2 != "none":
         add_session(time, uid, auid, cwd, pid, a2)
-        print added to db
+        print "added to db"
 
 
 if __name__ == '__main__':
