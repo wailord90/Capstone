@@ -7,7 +7,7 @@ def create_db():
 
 
 def add_session(time, uid, auid, cwd, pid, a2):
-    datetime_object = datetime.strptime(time, '%b %d %Y %I:%M%p')
+    datetime_object = datetime.strptime(time, '%m/%d/%Y %H:%M:%S.%f')
     user_sess = User_Sessions(time=datetime_object,
                               uid=username, auid=auid, cwd=cwd, pid=pid, a2=a2)
     db.session.add(user_sess)

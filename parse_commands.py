@@ -36,7 +36,7 @@ def parse(lines):
     else:
         auid = "none"
     time = re.search(
-        "([0-9]+\/[0-9]+\/[0-9]+ [0-9]+:[0-9]+:[0-9]+.[0-9]+:[0-9]+)", lines)
+        "([0-9]+\/[0-9]+\/[0-9]+ [0-9]+:[0-9]+:[0-9]+.[0-9]+)", lines)
     if time:
         time = time.group(0)
     else:
