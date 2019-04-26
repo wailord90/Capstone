@@ -1,5 +1,4 @@
 from flask_bootstrap import Bootstrap
-from models import *
 # from pipenv.vendor.dotenv import load_dotenv
 from flask import Flask, render_template, request, jsonify, redirect, Response
 import os
@@ -41,8 +40,9 @@ def index():
 @app.route('/logs')
 def logs():
     sessions = query_sessions()
-    json_session = d.__dict__ for d in sessions
-    return render_template('logs.html', sessions=json_session)
+    json_sessions = [d.__dict__ for d in sessions]
+    json_sessions = jsonify(json_sessions)
+    return render_template('logs.html', sessions=json_sessions)
 
 
 @app.route('/SecureServerRoom.com/cameras')
