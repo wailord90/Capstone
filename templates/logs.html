@@ -93,28 +93,38 @@
         <div class="col-sm-8 text-left">
           <div class="container">
             <h2>LOGS</h2>
-            <table class="table">
-              <thead>
-                <tr>
-                  <th>#</th>
-                  <th>Date</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>1</td>
-                  <td>12/10/2018</td>
-                </tr>
-                <tr>
-                  <td>2</td>
-                  <td>12/09/2018</td>
-                </tr>
-                <tr>
-                  <td>3</td>
-                  <td>12/08/2018</td>
-                </tr>
-              </tbody>
-            </table>
+
+            {% block content %}
+            <div
+              class="flight-container"
+              style="overflow: auto; max-height: 80vh"
+            >
+              <div class="table-responsive">
+                <table class="table" id="flights">
+                  <thead>
+                    <tr>
+                      <th scope="col">Flight</th>
+                      <th scope="col">Destination</th>
+                      <th scope="col">Check in</th>
+                      <th scope="col">Depature</th>
+                      <th scope="col">Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% for sessions in sessions %}
+                    <tr id="{{" sessions.id }}>
+                      <th scope="row">{{ sessions.flight }}</th>
+                      <td>{{ sessions.destination }}</td>
+                      <td>{{ sessions.check_in }}</td>
+                      <td>{{ sessions.depature }}</td>
+                      <td>{{ sessions.status }}</td>
+                    </tr>
+                    {% endfor %}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            {% endblock %}
           </div>
           <hr />
         </div>

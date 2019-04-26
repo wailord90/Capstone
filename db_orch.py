@@ -17,6 +17,8 @@ def add_session(time, uid, auid, cwd, pid, a2):
 def query_sessions():
     return User_Sessions.query.all()
 
+def delete_sessions():
+  return User_Sessions.query().delete()
 
 def query_filtered_sessions(fil):
     return User_Sessions.query.filter_by(uid=fil).first()
