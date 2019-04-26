@@ -113,11 +113,11 @@
                   <tbody>
                     {% for sessions in sessions %}
                     <tr id="{{" sessions.id }}>
-                      <th scope="row">{{ sessions.flight }}</th>
-                      <td>{{ sessions.destination }}</td>
-                      <td>{{ sessions.check_in }}</td>
-                      <td>{{ sessions.depature }}</td>
-                      <td>{{ sessions.status }}</td>
+                      <th scope="row">{{ sessions.uid }}</th>
+                      <td>{{ sessions.pid }}</td>
+                      <td>{{ sessions.time }}</td>
+                      <td>{{ sessions.a2 }}</td>
+                      <td>{{ sessions.cwd }}</td>
                     </tr>
                     {% endfor %}
                   </tbody>
