@@ -4,6 +4,11 @@ from datetime import datetime
 
 def create_db():
     db.create_all()
+def turtle():
+    sessions = query_sessions()
+    json_sessions = [d.__dict__ for d in sessions]
+    json_sessions = jsonify(json_sessions)
+    print turtle
 
 
 def add_session(time, uid, auid, cwd, pid, a2):
