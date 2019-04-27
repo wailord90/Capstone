@@ -5,12 +5,10 @@ from datetime import datetime
 def create_db():
     db.create_all()
 
-
-
-def add_session(time, uid, auid, cwd, pid, a2, cmd):
+def add_session(time, uid, auid, cwd, pid, a2, cmd, hostname, flag):
     datetime_object = datetime.strptime(time, '%m/%d/%Y %H:%M:%S.%f')
     user_sess = User_Sessions(time=datetime_object,
-                              uid=uid, auid=auid, cwd=cwd, pid=pid, a2=a2, cmd=cmd)
+                              uid=uid, auid=auid, cwd=cwd, pid=pid, a2=a2, cmd=cmd,hostname=hostname,flag=flag)
     db.session.add(user_sess)
     db.session.commit()
 
