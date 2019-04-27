@@ -111,15 +111,15 @@
                     </tr>
                   </thead>
                   <tbody>
-                    {% for sessions in sessions %}
-                    <tr id="{{" sessions.id }}>
-                      <th scope="row">{{ sessions.uid }}</th>
-                      <td>{{ sessions.auid }}</td>
-                      <td>{{ sessions.cmd }}</td>
-                      <td>{{ sessions.pid }}</td>
-                      <td>{{ sessions.time }}</td>
-                      <td>{{ sessions.a2 }}</td>
-                      <td>{{ sessions.cwd }}</td>
+                    {% for session in sessions %}
+                    <tr id="{{" session.id }}>
+                      <th scope="row">{{ session.uid }}</th>
+                      <td>{{ session.auid }}</td>
+                      <td>{{ session.cmd }}</td>
+                      <td>{{ session.pid }}</td>
+                      <td>{{ session.time }}</td>
+                      <td>{{ session.a2 }}</td>
+                      <td>{{ session.cwd }}</td>
                     </tr>
                     {% endfor %}
                   </tbody>
