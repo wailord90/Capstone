@@ -114,6 +114,8 @@
                     {% for sessions in sessions %}
                     <tr id="{{" sessions.id }}>
                       <th scope="row">{{ sessions.uid }}</th>
+                      <td>{{ sessions.auid }}</td>
+                      <td>{{ sessions.cmd }}</td>
                       <td>{{ sessions.pid }}</td>
                       <td>{{ sessions.time }}</td>
                       <td>{{ sessions.a2 }}</td>
