@@ -4,17 +4,13 @@ from datetime import datetime
 
 def create_db():
     db.create_all()
-def turtle():
-    sessions = query_sessions()
-    json_sessions = [d.__dict__ for d in sessions]
-    json_sessions = jsonify(json_sessions)
-    print turtle
 
 
-def add_session(time, uid, auid, cwd, pid, a2):
+
+def add_session(time, uid, auid, cwd, pid, a2, cmd):
     datetime_object = datetime.strptime(time, '%m/%d/%Y %H:%M:%S.%f')
     user_sess = User_Sessions(time=datetime_object,
-                              uid=uid, auid=auid, cwd=cwd, pid=pid, a2=a2)
+                              uid=uid, auid=auid, cwd=cwd, pid=pid, a2=a2, cmd=cmd)
     db.session.add(user_sess)
     db.session.commit()
 

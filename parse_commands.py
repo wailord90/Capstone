@@ -67,7 +67,7 @@ def parse(lines):
         cwd = "none"
     print lines
     if cmd != "none" or a2 != "none":
-        add_session(time, uid, auid, cwd, pid, a2)
+        add_session(time, uid, auid, cwd, pid, a2,cmd)
         print "added to db"
         print "rotating logs"
 
