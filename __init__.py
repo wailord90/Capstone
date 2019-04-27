@@ -34,7 +34,9 @@ def archive():
 
 @app.route('/')
 def index():
-    return render_template('index.html', items="data")
+    sessions = query_sessions()
+    json_sessions = [d.__dict__ for d in sessions]
+    return render_template('index.html', items="data", sessions=jsonify(json_sessions))
 
 
 @app.route('/logs')

@@ -125,6 +125,14 @@
         </div>
         <div class="col-sm-2 sidenav">
           <h3>recent activity</h3>
+          <div class="well">
+            <p>
+              {{ sessions[sessions.length - 1].time }}:{{
+                sessions[sessions.length - 1].auid
+              }}:{{ sessions[sessions.length - 1].cmd }}
+            </p>
+          </div>
+          <div class="well"><p>1/3/2019:user2</p></div>
           <div class="well"><p>1/1/2019:user1</p></div>
           <div class="well"><p>1/3/2019:user2</p></div>
         </div>
