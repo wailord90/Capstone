@@ -632,3 +632,123 @@ type=USER_CMD msg=audit(04/24/2019 13:19:19.240:232) : pid=2952 uid=root auid=us
 type=USER_ACCT msg=audit(04/25/2019 01:53:42.729:237) : pid=2982 uid=root auid=user ses=1 subj==unconfined msg='op=PAM:accounting acct=root exe=/usr/bin/sudo hostname=capstone_1 addr=? terminal=/dev/tty1 res=success' 
 ----
 type=USER_CMD msg=audit(04/25/2019 01:53:42.733:238) : pid=2982 uid=root auid=user ses=1 subj==unconfined msg='cwd=/var/www/FlaskApp/FlaskApp/Capstone cmd=ls terminal=tty1 res=success' 
+--
+----
+type=USER_ACCT msg=audit(04/26/2019 00:30:32.063:119) : pid=2009 uid=root auid=user ses=1 subj==unconfined msg='op=PAM:accounting acct=root exe=/usr/bin/sudo hostname=capstone_1 addr=? terminal=/dev/tty1 res=success' 
+----
+type=USER_CMD msg=audit(04/26/2019 00:30:32.067:120) : pid=2009 uid=root auid=user ses=1 subj==unconfined msg='cwd=/var/www/FlaskApp/FlaskApp/Capstone cmd=service apache2 restart terminal=tty1 res=success' 
+--
+----
+type=USER_ACCT msg=audit(04/26/2019 00:31:44.072:127) : pid=2101 uid=root auid=user ses=1 subj==unconfined msg='op=PAM:accounting acct=root exe=/usr/bin/sudo hostname=capstone_1 addr=? terminal=/dev/tty1 res=success' 
+----
+type=USER_CMD msg=audit(04/26/2019 00:31:44.076:128) : pid=2101 uid=root auid=user ses=1 subj==unconfined msg='cwd=/var/www/FlaskApp/FlaskApp/Capstone cmd=service apache2 start terminal=tty1 res=success' 
+--
+----
+type=USER_ACCT msg=audit(04/26/2019 00:45:45.372:134) : pid=2167 uid=root auid=user ses=1 subj==unconfined msg='op=PAM:accounting acct=root exe=/usr/bin/sudo hostname=capstone_1 addr=? terminal=/dev/tty1 res=success' 
+----
+type=USER_CMD msg=audit(04/26/2019 00:45:45.376:135) : pid=2167 uid=root auid=user ses=1 subj==unconfined msg='cwd=/var/www/FlaskApp/FlaskApp/Capstone cmd=service apache2 start terminal=tty1 res=success' 
+--
+----
+type=USER_ACCT msg=audit(04/26/2019 01:05:04.638:140) : pid=2228 uid=root auid=user ses=1 subj==unconfined msg='op=PAM:accounting acct=root exe=/usr/bin/sudo hostname=capstone_1 addr=? terminal=/dev/tty1 res=success' 
+----
+type=USER_CMD msg=audit(04/26/2019 01:05:04.642:141) : pid=2228 uid=root auid=user ses=1 subj==unconfined msg='cwd=/var/www/FlaskApp/FlaskApp/Capstone cmd=service apache2 restart terminal=tty1 res=success' 
+--
+----
+type=USER_ACCT msg=audit(04/26/2019 01:15:46.809:149) : pid=2352 uid=root auid=user ses=1 subj==unconfined msg='op=PAM:accounting acct=root exe=/usr/bin/sudo hostname=capstone_1 addr=? terminal=/dev/tty1 res=success' 
+----
+type=USER_CMD msg=audit(04/26/2019 01:15:46.813:150) : pid=2352 uid=root auid=user ses=1 subj==unconfined msg='cwd=/var/www/FlaskApp/FlaskApp/Capstone cmd=service apache2 start terminal=tty1 res=success' 
+--
+----
+type=USER_ACCT msg=audit(04/26/2019 01:28:41.429:162) : pid=2472 uid=root auid=user ses=1 subj==unconfined msg='op=PAM:accounting acct=root exe=/usr/bin/sudo hostname=capstone_1 addr=? terminal=/dev/tty1 res=success' 
+----
+type=USER_CMD msg=audit(04/26/2019 01:28:41.429:163) : pid=2472 uid=root auid=user ses=1 subj==unconfined msg='cwd=/var/www/FlaskApp/FlaskApp/Capstone cmd=service apache2 start terminal=tty1 res=success' 
+--
+----
+type=USER_ACCT msg=audit(04/26/2019 01:31:15.971:168) : pid=2521 uid=root auid=user ses=1 subj==unconfined msg='op=PAM:accounting acct=root exe=/usr/bin/sudo hostname=capstone_1 addr=? terminal=/dev/tty1 res=success' 
+----
+type=USER_CMD msg=audit(04/26/2019 01:31:15.975:169) : pid=2521 uid=root auid=user ses=1 subj==unconfined msg='cwd=/var/www/FlaskApp/FlaskApp/Capstone cmd=service apache2 start terminal=tty1 res=success' 
+--
+----
+type=USER_ACCT msg=audit(04/26/2019 01:33:20.363:174) : pid=2573 uid=root auid=user ses=1 subj==unconfined msg='op=PAM:accounting acct=root exe=/usr/bin/sudo hostname=capstone_1 addr=? terminal=/dev/tty1 res=success' 
+----
+type=USER_CMD msg=audit(04/26/2019 01:33:20.367:175) : pid=2573 uid=root auid=user ses=1 subj==unconfined msg='cwd=/var/www/FlaskApp/FlaskApp/Capstone cmd=service apache2 start terminal=tty1 res=success' 
+--
+----
+type=USER_ACCT msg=audit(04/26/2019 01:35:15.759:180) : pid=2613 uid=root auid=user ses=1 subj==unconfined msg='op=PAM:accounting acct=root exe=/usr/bin/sudo hostname=capstone_1 addr=? terminal=/dev/tty1 res=success' 
+----
+type=USER_CMD msg=audit(04/26/2019 01:35:15.763:181) : pid=2613 uid=root auid=user ses=1 subj==unconfined msg='cwd=/var/www/FlaskApp/FlaskApp/Capstone cmd=service apache2 start terminal=tty1 res=success' 
+--
+----
+type=USER_ACCT msg=audit(04/26/2019 01:46:51.938:186) : pid=2669 uid=root auid=user ses=1 subj==unconfined msg='op=PAM:accounting acct=root exe=/usr/bin/sudo hostname=capstone_1 addr=? terminal=/dev/tty1 res=success' 
+----
+type=USER_CMD msg=audit(04/26/2019 01:46:51.942:187) : pid=2669 uid=root auid=user ses=1 subj==unconfined msg='cwd=/var/www/FlaskApp/FlaskApp/Capstone cmd=service apache2 start terminal=tty1 res=success' 
+--
+----
+type=USER_ACCT msg=audit(04/26/2019 02:11:04.353:192) : pid=2757 uid=root auid=user ses=1 subj==unconfined msg='op=PAM:accounting acct=root exe=/usr/bin/sudo hostname=capstone_1 addr=? terminal=/dev/tty1 res=success' 
+----
+type=USER_CMD msg=audit(04/26/2019 02:11:04.357:193) : pid=2757 uid=root auid=user ses=1 subj==unconfined msg='cwd=/var/www/FlaskApp/FlaskApp/Capstone cmd=service apache2 start terminal=tty1 res=success' 
+--
+----
+type=USER_ACCT msg=audit(04/26/2019 02:13:21.583:198) : pid=2798 uid=root auid=user ses=1 subj==unconfined msg='op=PAM:accounting acct=root exe=/usr/bin/sudo hostname=capstone_1 addr=? terminal=/dev/tty1 res=success' 
+----
+type=USER_CMD msg=audit(04/26/2019 02:13:21.587:199) : pid=2798 uid=root auid=user ses=1 subj==unconfined msg='cwd=/var/www/FlaskApp/FlaskApp/Capstone cmd=service apache2 start terminal=tty1 res=success' 
+--
+----
+type=USER_ACCT msg=audit(04/26/2019 04:49:33.458:222) : pid=2877 uid=root auid=user ses=1 subj==unconfined msg='op=PAM:accounting acct=root exe=/usr/bin/sudo hostname=capstone_1 addr=? terminal=/dev/tty1 res=success' 
+----
+type=USER_CMD msg=audit(04/26/2019 04:49:33.462:223) : pid=2877 uid=root auid=user ses=1 subj==unconfined msg='cwd=/var/www/FlaskApp/FlaskApp/Capstone/templates cmd=service apache2 start terminal=tty1 res=success' 
+--
+----
+type=USER_ACCT msg=audit(04/26/2019 04:53:00.367:228) : pid=2917 uid=root auid=user ses=1 subj==unconfined msg='op=PAM:accounting acct=root exe=/usr/bin/sudo hostname=capstone_1 addr=? terminal=/dev/tty1 res=success' 
+----
+type=USER_CMD msg=audit(04/26/2019 04:53:00.371:229) : pid=2917 uid=root auid=user ses=1 subj==unconfined msg='cwd=/var/www/FlaskApp/FlaskApp/Capstone/templates cmd=service apache2 start terminal=tty1 res=success' 
+--
+----
+type=USER_ACCT msg=audit(04/26/2019 04:54:52.368:234) : pid=2957 uid=root auid=user ses=1 subj==unconfined msg='op=PAM:accounting acct=root exe=/usr/bin/sudo hostname=capstone_1 addr=? terminal=/dev/tty1 res=success' 
+----
+type=USER_CMD msg=audit(04/26/2019 04:54:52.368:235) : pid=2957 uid=root auid=user ses=1 subj==unconfined msg='cwd=/var/www/FlaskApp/FlaskApp/Capstone/templates cmd=service apache2 start terminal=tty1 res=success' 
+--
+----
+type=USER_ACCT msg=audit(04/26/2019 04:59:00.656:240) : pid=2989 uid=root auid=user ses=1 subj==unconfined msg='op=PAM:accounting acct=root exe=/usr/bin/sudo hostname=capstone_1 addr=? terminal=/dev/tty1 res=success' 
+----
+type=USER_CMD msg=audit(04/26/2019 04:59:00.656:241) : pid=2989 uid=root auid=user ses=1 subj==unconfined msg='cwd=/var/www/FlaskApp/FlaskApp/Capstone/templates cmd=service apache2 start terminal=tty1 res=success' 
+--
+----
+type=USER_ACCT msg=audit(04/26/2019 05:02:59.588:246) : pid=3022 uid=root auid=user ses=1 subj==unconfined msg='op=PAM:accounting acct=root exe=/usr/bin/sudo hostname=capstone_1 addr=? terminal=/dev/tty1 res=success' 
+----
+type=USER_CMD msg=audit(04/26/2019 05:02:59.588:247) : pid=3022 uid=root auid=user ses=1 subj==unconfined msg='cwd=/var/www/FlaskApp/FlaskApp/Capstone/templates cmd=service apache2 start terminal=tty1 res=success' 
+--
+----
+type=USER_ACCT msg=audit(04/26/2019 05:06:46.341:253) : pid=3071 uid=root auid=user ses=1 subj==unconfined msg='op=PAM:accounting acct=root exe=/usr/bin/sudo hostname=capstone_1 addr=? terminal=/dev/tty1 res=success' 
+----
+type=USER_CMD msg=audit(04/26/2019 05:06:46.341:254) : pid=3071 uid=root auid=user ses=1 subj==unconfined msg='cwd=/var/www/FlaskApp/FlaskApp/Capstone/templates cmd=service apache2 start terminal=tty1 res=success' 
+--
+----
+type=USER_ACCT msg=audit(04/26/2019 05:14:40.008:260) : pid=3206 uid=root auid=user ses=1 subj==unconfined msg='op=PAM:accounting acct=root exe=/usr/bin/sudo hostname=capstone_1 addr=? terminal=/dev/tty1 res=success' 
+----
+type=USER_CMD msg=audit(04/26/2019 05:14:40.008:261) : pid=3206 uid=root auid=user ses=1 subj==unconfined msg='cwd=/var/www/FlaskApp/FlaskApp/Capstone cmd=service apache2 start terminal=tty1 res=success' 
+--
+----
+type=USER_ACCT msg=audit(04/27/2019 04:43:37.636:276) : pid=3781 uid=root auid=user ses=1 subj==unconfined msg='op=PAM:accounting acct=root exe=/usr/bin/sudo hostname=capstone_1 addr=? terminal=/dev/tty1 res=success' 
+----
+type=USER_CMD msg=audit(04/27/2019 04:43:37.660:277) : pid=3781 uid=root auid=user ses=1 subj==unconfined msg='cwd=/var/www/FlaskApp/FlaskApp/Capstone cmd=service apache2 start terminal=tty1 res=success' 
+--
+----
+type=USER_ACCT msg=audit(04/27/2019 05:05:43.151:283) : pid=3850 uid=root auid=user ses=1 subj==unconfined msg='op=PAM:accounting acct=root exe=/usr/bin/sudo hostname=capstone_1 addr=? terminal=/dev/tty1 res=success' 
+----
+type=USER_CMD msg=audit(04/27/2019 05:05:43.155:284) : pid=3850 uid=root auid=user ses=1 subj==unconfined msg='cwd=/etc cmd=service apache2 start terminal=tty1 res=success' 
+--
+----
+type=USER_ACCT msg=audit(04/27/2019 05:20:54.294:296) : pid=4018 uid=root auid=user ses=1 subj==unconfined msg='op=PAM:accounting acct=root exe=/usr/bin/sudo hostname=capstone_1 addr=? terminal=/dev/tty1 res=success' 
+----
+type=USER_CMD msg=audit(04/27/2019 05:20:54.298:297) : pid=4018 uid=root auid=user ses=1 subj==unconfined msg='cwd=/var/www/FlaskApp/FlaskApp/Capstone cmd=ls terminal=tty1 res=success' 
+--
+----
+type=USER_ACCT msg=audit(04/27/2019 05:20:57.110:302) : pid=4020 uid=root auid=user ses=1 subj==unconfined msg='op=PAM:accounting acct=root exe=/usr/bin/sudo hostname=capstone_1 addr=? terminal=/dev/tty1 res=success' 
+----
+type=USER_CMD msg=audit(04/27/2019 05:20:57.110:303) : pid=4020 uid=root auid=user ses=1 subj==unconfined msg='cwd=/var/www/FlaskApp/FlaskApp/Capstone cmd=pwd terminal=tty1 res=success' 
+--
+----
+type=USER_ACCT msg=audit(04/27/2019 05:21:02.594:308) : pid=4022 uid=root auid=user ses=1 subj==unconfined msg='op=PAM:accounting acct=root exe=/usr/bin/sudo hostname=capstone_1 addr=? terminal=/dev/tty1 res=success' 
+----
+type=USER_CMD msg=audit(04/27/2019 05:21:02.598:309) : pid=4022 uid=root auid=user ses=1 subj==unconfined msg='cwd=/var/www/FlaskApp/FlaskApp/Capstone cmd=hostname terminal=tty1 res=success' 

@@ -103,16 +103,18 @@
                 <table class="table" id="flights">
                   <thead>
                     <tr>
-                      <th scope="col">Flight</th>
-                      <th scope="col">Destination</th>
-                      <th scope="col">Check in</th>
-                      <th scope="col">Depature</th>
-                      <th scope="col">Status</th>
+                      <th scope="col">UID</th>
+                      <th scope="col">AUID</th>
+                      <th scope="col">CMD</th>
+                      <th scope="col">PID</th>
+                      <th scope="col">TIME</th>
+		      <th scope="col">A2</th>
+		      <th scope="col">CWD</th>
                     </tr>
                   </thead>
                   <tbody>
                     {% for session in sessions %}
-                    <tr id="{{" session.id }}>
+                    <tr id={{ session.id }}>
                       <th scope="row">{{ session.uid }}</th>
                       <td>{{ session.auid }}</td>
                       <td>{{ session.cmd }}</td>
