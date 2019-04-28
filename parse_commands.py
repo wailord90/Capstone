@@ -69,7 +69,7 @@ def parse(lines):
     print lines
     
     if cmd != "none" or a2 != "none":
-        add_session(time, uid, auid, cwd, pid, a2, cmd,     hostname = os.popen("hostname").read(), flag="none")
+        add_session(time, uid, auid, cwd, pid, a2, cmd,host = os.popen("hostname").read(), flag="none")
 
 
 
