@@ -7,7 +7,7 @@ from db_orch import add_session
 def main(argv):
 
     os.system("ausearch -ua root -i | grep cmd -B 3 > tmpfile.txt")
-    hostname = os.popen("hostname").read()
+
     with open('tmpfile.txt', 'r') as infile:
         lines = []
         for line in infile:
@@ -69,7 +69,7 @@ def parse(lines):
     print lines
     
     if cmd != "none" or a2 != "none":
-        add_session(time, uid, auid, cwd, pid, a2, cmd, hostname, flag="none")
+        add_session(time, uid, auid, cwd, pid, a2, cmd,     hostname = os.popen("hostname").read(), flag="none")
 
 
 
