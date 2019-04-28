@@ -36,7 +36,7 @@ def archive():
 def index():
     sessions = query_sessions()
     json_sessions = [d.__dict__ for d in sessions] 
-    return render_template('index.html', session_length=len(json_sessions), sessions=recent_list)
+    return render_template('index.html', session_length=len(json_sessions), sessions=json_sessions)
 
 
 @app.route('/logs')
