@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -99,33 +100,12 @@
               class="flight-container"
               style="overflow: auto; max-height: 80vh"
             >
-              <div class="table-responsive">
-                <table class="table" id="flights">
-                  <thead>
-                    <tr>
-                      <th scope="col">UID</th>
-                      <th scope="col">AUID</th>
-                      <th scope="col">CMD</th>
-                      <th scope="col">PID</th>
-                      <th scope="col">TIME</th>
-		      <th scope="col">A2</th>
-		      <th scope="col">CWD</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {% for session in sessions %}
-                    <tr id={{ session.id }}>
-                      <th scope="row">{{ session.uid }}</th>
-                      <td>{{ session.auid }}</td>
-                      <td>{{ session.cmd }}</td>
-                      <td>{{ session.pid }}</td>
-                      <td>{{ session.time }}</td>
-                      <td>{{ session.a2 }}</td>
-                      <td>{{ session.cwd }}</td>
-                    </tr>
+            <input type="submit" name="submit_button" value="capstone1" />
+            <input type="submit" name="submit_button" value="capstone2" />
+            <input type="submit" name="submit_button" value="capstone3" />
+            <input type="submit" name="submit_button" value="capstone4" />
+
                     {% endfor %}
-                  </tbody>
-                </table>
               </div>
             </div>
             {% endblock %}
