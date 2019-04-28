@@ -38,7 +38,8 @@ def index():
     sessions = query_sessions()
     json_sessions = [d.__dict__ for d in sessions] 
     session_length=len(json_sessions)-1
-    return render_template('index.html', session_length=session_length, sessions=json_sessions, time1=pretty_date(sessions[session_length].time))
+    return render_template('index.html', session_length=session_length, sessions=json_sessions, time1=pretty_date(sessions[session_length].time)
+    time2=pretty_date(sessions[session_length-1].time),time3=pretty_date(sessions[session_length-2].time),time4=pretty_date(sessions[session_length-3].time))
 
 
 @app.route('/logs')

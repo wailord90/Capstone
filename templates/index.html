@@ -127,14 +127,36 @@
           <h3>recent activity</h3>
           <div class="well">
             <p>
-              {{ time1 }}:{{ sessions[session_length].auid }}:{{
+              {{ sessions[session_length].auid }}:{{
                 sessions[session_length].cmd
               }}
             </p>
+            <p>{{ time1 }}</p>
           </div>
-          <div class="well"><p>1/3/2019:user2</p></div>
-          <div class="well"><p>1/1/2019:user1</p></div>
-          <div class="well"><p>1/3/2019:user2</p></div>
+          <div class="well">
+            <p>
+              {{ sessions[session_length - 1].auid }}:{{
+                sessions[session_length - 1].cmd
+              }}
+            </p>
+            <p>{{ time2 }}</p>
+          </div>
+          <div class="well">
+            <p>
+              {{ sessions[session_length - 2].auid }}:{{
+                sessions[session_length - 2].cmd
+              }}
+            </p>
+            <p>{{ time3 }}</p>
+          </div>
+          <div class="well">
+            <p>
+              {{ sessions[session_length - 3].auid }}:{{
+                sessions[session_length - 3].cmd
+              }}
+            </p>
+            <p>{{ time4 }}</p>
+          </div>
         </div>
       </div>
     </div>
