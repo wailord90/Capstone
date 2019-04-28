@@ -45,8 +45,10 @@ def index():
     return render_template('index.html', session_length=session_length, sessions=json_sessions,time1=time1,time2=time2,time3=time3,time4=time4)
 
 
-@app.route('/logs')
+@app.route('/logs', methods=["GET", "POST"])
 def logs():
+    if request.method == "POST":
+        return render_template("logs.html", ButtonPressed = ButtonPressed)
     sessions = query_sessions()
     json_sessions = [d.__dict__ for d in sessions]
     return render_template('hosts.html', sessions=json_sessions)
