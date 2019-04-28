@@ -9,6 +9,7 @@ import cv2
 import sys
 import numpy
 import time
+from time_convert import pretty_date
 from datetime import datetime
 from sqlalchemy import create_engine, MetaData, Table
 from db_orch import query_sessions
@@ -36,7 +37,7 @@ def archive():
 def index():
     sessions = query_sessions()
     json_sessions = [d.__dict__ for d in sessions] 
-    return render_template('index.html', session_length=len(json_sessions)-1, sessions=json_sessions)
+    return render_template('index.html', session_length=len(json_sessions)-1, sessions=json_sessions, time1=pretty_date(sessions[session_length].time))
 
 
 @app.route('/logs')
