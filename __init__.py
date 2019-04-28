@@ -49,7 +49,7 @@ def index():
 def logs():
     sessions = query_sessions()
     json_sessions = [d.__dict__ for d in sessions]
-    return render_template('logs.html', sessions=json_sessions)
+    return render_template('hosts.html', sessions=json_sessions)
 
 
 @app.route('/SecureServerRoom.com/cameras')
