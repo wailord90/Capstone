@@ -36,22 +36,27 @@ def archive():
 @app.route('/')
 def index():
     sessions = query_sessions()
-    json_sessions = [d.__dict__ for d in sessions] 
-    session_length=len(json_sessions)-1
-    time2=pretty_date(sessions[session_length-1].time)
-    time1=pretty_date(sessions[session_length].time)
-    time3=pretty_date(sessions[session_length-2].time)
-    time4=pretty_date(sessions[session_length-3].time)
-    return render_template('index.html', session_length=session_length, sessions=json_sessions,time1=time1,time2=time2,time3=time3,time4=time4)
+    json_sessions = [d.__dict__ for d in sessions]
+    session_length = len(json_sessions)-1
+    time2 = pretty_date(sessions[session_length-1].time)
+    time1 = pretty_date(sessions[session_length].time)
+    time3 = pretty_date(sessions[session_length-2].time)
+    time4 = pretty_date(sessions[session_length-3].time)
+    return render_template('index.html', session_length=session_length, sessions=json_sessions, time1=time1, time2=time2, time3=time3, time4=time4)
 
 
 @app.route('/logs', methods=["GET", "POST"])
 def logs():
     if request.method == "POST":
-        return render_template("logs.html", ButtonPressed = ButtonPressed)
+        if request.form['submit_button'] == 'capstone1':
+            return render_template("logs.html", sessions=json_sessions)
+            pass  # do something
+        elif request.form['submit_button'] == 'capstone2':
+            pass  # do something else
+            return render_template("logs.html", sessions=json_sessions)
     sessions = query_sessions()
     json_sessions = [d.__dict__ for d in sessions]
-    return render_template('hosts.html', sessions=json_sessions)
+    return render_template('hosts.html')
 
 
 @app.route('/SecureServerRoom.com/cameras')

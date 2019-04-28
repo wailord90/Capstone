@@ -16,7 +16,7 @@
         margin-bottom: 0;
         border-radius: 0;
       }
-
+      name="delete
       /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
       .row.content {
         height: 450px;
@@ -108,13 +108,13 @@
                       <th scope="col">CMD</th>
                       <th scope="col">PID</th>
                       <th scope="col">TIME</th>
-		      <th scope="col">A2</th>
-		      <th scope="col">CWD</th>
+                      <th scope="col">A2</th>
+                      <th scope="col">CWD</th>
                     </tr>
                   </thead>
                   <tbody>
                     {% for session in sessions %}
-                    <tr id={{ session.id }}>
+                    <tr id="{{" session.id }}>
                       <th scope="row">{{ session.uid }}</th>
                       <td>{{ session.auid }}</td>
                       <td>{{ session.cmd }}</td>
@@ -129,7 +129,6 @@
               </div>
             </div>
             {% endblock %}
-            
           </div>
           <hr />
         </div>
