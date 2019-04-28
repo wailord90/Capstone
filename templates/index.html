@@ -126,7 +126,7 @@
         <div class="col-sm-2 sidenav">
           <h3>recent activity</h3>
           <div class="well">
-            <h1>sessions[session_length - 1].host</h1>
+            <p>{{ sessions[session_length - 1].host }}</p>
             <p>
               {{ sessions[session_length].auid }}:{{
                 sessions[session_length].cmd
@@ -135,7 +135,7 @@
             <p>{{ time1 }}</p>
           </div>
           <div class="well">
-            <h1>sessions[session_length - 1].host</h1>
+            <p>{{ sessions[session_length - 1].host }}</p>
             <p>
               {{ sessions[session_length - 1].auid }}:{{
                 sessions[session_length - 1].cmd
@@ -144,7 +144,7 @@
             <p>{{ time2 }}</p>
           </div>
           <div class="well">
-            <h1>sessions[session_length - 1].host</h1>
+            <p>{{ sessions[session_length - 1].host }}</p>
             <p>
               {{ sessions[session_length - 2].auid }}:{{
                 sessions[session_length - 2].cmd
@@ -153,14 +153,13 @@
             <p>{{ time3 }}</p>
           </div>
           <div class="well">
-            <h1>sessions[session_length - 1].host</h1>
+            <p>{{ sessions[session_length - 1].host }}</p>
             <p>
               {{ sessions[session_length - 3].auid }}:{{
                 sessions[session_length - 3].cmd
               }}
             </p>
             <p>{{ time4 }}</p>
-            <h1>sessions[session_length - 1].host</h1>
           </div>
         </div>
       </div>
