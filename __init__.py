@@ -50,7 +50,7 @@ def logs():
     sessions = query_sessions()
     json_sessions = [d.__dict__ for d in sessions]
     if request.method == "POST":
-       man = dict((key,value) for key, value in json_sessions.iteritems() if key == 'capstone1')
+        man = dict((key,value) for key, value in json_sessions.iteritems() if key == 'capstone1')
         if request.form['submit_button'] == 'capstone1':
             return render_template("logs.html", sessions=man)
             pass  # do something
