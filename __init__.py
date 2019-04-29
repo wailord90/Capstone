@@ -47,6 +47,8 @@ def index():
 
 @app.route('/logs', methods=["GET", "POST"])
 def logs():
+    sessions = query_sessions()
+    json_sessions = [d.__dict__ for d in sessions]
     if request.method == "POST":
         if request.form['submit_button'] == 'capstone1':
             return render_template("logs.html", sessions=json_sessions)
@@ -54,8 +56,7 @@ def logs():
         elif request.form['submit_button'] == 'capstone2':
             pass  # do something else
             return render_template("logs.html", sessions=json_sessions)
-    sessions = query_sessions()
-    json_sessions = [d.__dict__ for d in sessions]
+
     return render_template('hosts.html')
 
 
