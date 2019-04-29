@@ -47,27 +47,27 @@ def index():
 
 @app.route('/logs', methods=["GET", "POST"])
 def logs():
-    sessions = query_sessions()
-    json_sessions = [d.__dict__ for d in sessions]
-    input_dict = json_sessions
-    tmp = []
-    for x in input_dict:
-        print x['host']
-        if str(x['host']).strip() == "capstone_1":
-            tmp.append(x)
+
     if request.method == "POST":
-        input_dict = json.loads(json_sessions)
-        output_dict = [x for x in input_dict if x['host'] == 'capstone1']
-        output_json = json.dumps(output_dict)
-        if request.form['submit_button'] == 'capstone1':
-            return render_template("logs.html", sessions=output_json)
+        filterhost = ""
+
+        if request.form['submit_button'] == 'capstone_1':
+            filterhost = 'capstone_1'
             pass  # do something
-        elif request.form['submit_button'] == 'capstone2':
+        elif request.form['submit_button'] == 'capstone_2':
+            filterhost = 'capstone_2'
             pass  # do something else
-            return render_template("logs.html", sessions=json_sessions)
-        elif request.form['submit_button'] == 'capstone3':
+        elif request.form['submit_button'] == 'capstone_3':
+            filterhost = 'capstone_3'
             pass  # do something else
-            return render_template("logs.html", sessions=json_sessions)
+        sessions = query_sessions()
+        json_sessions = [d.__dict__ for d in sessions]
+        for x in json_sessions:
+            tmp = []
+            print x['host']
+            if str(x['host']).strip() == filterhost:
+                tmp.append(x)
+        return render_template("logs.html", sessions=tmp)
 
     return render_template('hosts.html')
 
