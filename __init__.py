@@ -67,7 +67,7 @@ def logs():
             print x['host']
             if str(x['host']).strip() == filterhost:
                 tmp.append(x)
-        return render_template("logs.html", sessions=tmp)
+        return render_template("logs.html", sessions=tmp, host=filterhost)
 
     return render_template('hosts.html')
 

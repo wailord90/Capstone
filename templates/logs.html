@@ -92,7 +92,7 @@
         </div>
         <div class="col-sm-8 text-left">
           <div class="container">
-            <h2>LOGS</h2>
+            <h2>{{ host }}LOGS</h2>
 
             {% block content %}
             <div
@@ -114,7 +114,7 @@
                   </thead>
                   <tbody>
                     {% for session in sessions %}
-                    <tr id={{ session.id }}>
+                    <tr id="{{" session.id }}>
                       <th scope="row">{{ session.uid }}</th>
                       <td>{{ session.auid }}</td>
                       <td>{{ session.cmd }}</td>
