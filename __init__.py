@@ -50,10 +50,14 @@ def logs():
     sessions = query_sessions()
     json_sessions = [d.__dict__ for d in sessions]
     if request.method == "POST":
+       man = dict((key,value) for key, value in json_sessions.iteritems() if key == 'capstone1')
         if request.form['submit_button'] == 'capstone1':
             return render_template("logs.html", sessions=json_sessions)
             pass  # do something
         elif request.form['submit_button'] == 'capstone2':
+            pass  # do something else
+            return render_template("logs.html", sessions=json_sessions)
+        elif request.form['submit_button'] == 'capstone3':
             pass  # do something else
             return render_template("logs.html", sessions=json_sessions)
 
