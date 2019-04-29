@@ -49,6 +49,10 @@ def index():
 def logs():
     sessions = query_sessions()
     json_sessions = [d.__dict__ for d in sessions]
+    input_dict = json.loads(json_sessions)
+    output_dict = [x for x in input_dict if x['host'] == 'capstone1']
+    print output_dict
+    output_json = json.dumps(output_dict)
     if request.method == "POST":
         input_dict = json.loads(json_sessions)
         output_dict = [x for x in input_dict if x['host'] == 'capstone1']
