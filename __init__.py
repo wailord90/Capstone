@@ -62,8 +62,8 @@ def logs():
             pass  # do something else
         sessions = query_sessions()
         json_sessions = [d.__dict__ for d in sessions]
+        tmp = []
         for x in json_sessions:
-            tmp = []
             print x['host']
             if str(x['host']).strip() == filterhost:
                 tmp.append(x)
