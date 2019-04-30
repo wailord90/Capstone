@@ -25,6 +25,7 @@ def add_session(time, uid, auid, cwd, pid, a2, cmd, host, flag):
 
 def archive(activity, date, flag):
     now = datetime.datetime.today()
+    backup(now)
     archived = Archived(date=now, activity=activity, flag=flag)
     db.session.add(archived)
     db.session.commit()
