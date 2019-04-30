@@ -4,12 +4,11 @@ import os
 
 
 def backup(date):
-    os.system("sqlite3 secureserver.db ".dump 'user__sessions'" | grep '^INSERT' > user_logs"+date+".db")
+    os.system("sqlite3 secureserver.db .dump 'user__sessions' | grep '^INSERT' > user_logs"+date+".db")
 
 
 def import_archive(date):
-    os.system("tmp=$(user_logs"+date +
-              ".sql);echo'${tmp//user__sessions/archived__user__sessions}' | sqlite3 secureserver.db")
+    os.system("tmp=$(user_logs"+date +".sql);echo'${tmp//user__sessions/archived__user__sessions}' | sqlite3 secureserver.db")
 
 
 def create_db():
