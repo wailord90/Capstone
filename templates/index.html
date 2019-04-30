@@ -89,44 +89,6 @@
 
     <div class="container-fluid text-center">
       <div class="row content">
-        <div class="col-sm-2 sidenav"></div>
-        <div class="col-sm-8 text-left">
-          <!-- <h1>SecureServerRoom</h1> -->
-          <div class="container">
-            <h2>Users</h2>
-
-            {% block content %}
-            <div
-              class="flight-container"
-              style="overflow: auto; max-height: 80vh"
-            >
-              <div class="table-responsive">
-                <table class="table" id="flights">
-                  <thead>
-                    <tr>
-                      <th scope="col">Name</th>
-                      <th scope="col">Email</th>
-                      <th scope="col">Active</th>
-                      <th scope="col">Phone</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {% for user in users %}
-                    <tr id="{{" user.id }}>
-                      <th scope="row">{{ user.username }}</th>
-                      <td>{{ user.email }}</td>
-                      <td>{{ user.authenticated }}</td>
-                      <td>{{ user.phonenumber }}</td>
-                    </tr>
-                    {% endfor %}
-                  </tbody>
-                </table>
-              </div>
-            </div>
-            {% endblock %}
-          </div>
-          <hr />
-        </div>
         <div class="col-sm-2 sidenav">
           <h3>recent activity</h3>
           <div class="well">
@@ -165,6 +127,43 @@
             </p>
             <p>{{ time4 }}</p>
           </div>
+        </div>
+        <div class="col-sm-8 text-left">
+          <!-- <h1>SecureServerRoom</h1> -->
+          <div class="container">
+            <h2>Users</h2>
+
+            {% block content %}
+            <div
+              class="flight-container"
+              style="overflow: auto; max-height: 80vh"
+            >
+              <div class="table-responsive">
+                <table class="table" id="flights">
+                  <thead>
+                    <tr>
+                      <th scope="col">Name</th>
+                      <th scope="col">Email</th>
+                      <th scope="col">Active</th>
+                      <th scope="col">Phone</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% for user in users %}
+                    <tr id="{{" user.id }}>
+                      <th scope="row">{{ user.username }}</th>
+                      <td>{{ user.email }}</td>
+                      <td>{{ user.authenticated }}</td>
+                      <td>{{ user.phonenumber }}</td>
+                    </tr>
+                    {% endfor %}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            {% endblock %}
+          </div>
+          <hr />
         </div>
       </div>
     </div>
