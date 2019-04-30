@@ -39,7 +39,7 @@ def add_user(email, password, authenticated, username, phonenumber):
 
 
 def query_users():
-    return Users.query().all()
+    return Users.query.all()
 
 
 def query_sessions():
