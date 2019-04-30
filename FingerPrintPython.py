@@ -17,7 +17,7 @@ while True:
         string += chr(line)
         # 13= carriage return 10= newline
         if(line == 13):
-            #print (string)
+            print (string)
             # string contain FingerPrint ID# and Confidence Level
             # relay data to main logging information
             if (string[11] == '1'):
