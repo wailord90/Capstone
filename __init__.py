@@ -12,7 +12,7 @@ import time
 from time_convert import pretty_date
 from datetime import datetime
 from sqlalchemy import create_engine, MetaData, Table
-from db_orch import query_sessions, import_archive
+from db_orch import query_sessions, query_users, import_archive
 
 
 # engine = create_engine('mysql://BH6:password1@localhost/secure_sever_db', convert_unicode=True)
