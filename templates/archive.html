@@ -106,7 +106,7 @@
                   </thead>
                   <tbody>
                     {% for archive in archives %}
-                    <tr id="{{" archive.id }}>
+		    <tr id={{ archive.id }}>
                       <th scope="row">{{ archive.date }}</th>
                       <td>{{ archive.activity }}</td>
                       <td>{{ session.flag }}</td>

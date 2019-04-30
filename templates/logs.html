@@ -114,7 +114,7 @@
                   </thead>
                   <tbody>
                     {% for session in sessions %}
-                    <tr id="{{" session.id }}>
+                    <tr id={{ session.id }}>
                       <th scope="row">{{ session.uid }}</th>
                       <td>{{ session.auid }}</td>
                       <td>{{ session.cmd }}</td>
