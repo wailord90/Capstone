@@ -88,28 +88,41 @@
         <div class="col-sm-8 text-left">
           <div class="container">
             <h2>Archives</h2>
-            <table class="table">
-              <thead>
-                <tr>
-                  <th>#</th>
-                  <th>Date</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>1</td>
-                  <td>12/10/2018</td>
-                </tr>
-                <tr>
-                  <td>2</td>
-                  <td>12/09/2018</td>
-                </tr>
-                <tr>
-                  <td>3</td>
-                  <td>12/08/2018</td>
-                </tr>
-              </tbody>
-            </table>
+            <h2>{{ host }}</h2>
+
+            {% block content %}
+            <div
+              class="flight-container"
+              style="overflow: auto; max-height: 80vh"
+            >
+              <div class="table-responsive">
+                <table class="table" id="flights">
+                  <thead>
+                    <tr>
+                      <th scope="col">Date</th>
+                      <th scope="col">Activity</th>
+                      <th scope="col">Flag</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% for archive in archives %}
+                    <tr id="{{" archive.id }}>
+                      <th scope="row">{{ archive.date }}</th>
+                      <td>{{ archive.activity }}</td>
+                      <td>{{ session.flag }}</td>
+                      <input
+                        class="btn btn-primary"
+                        type="submit"
+                        name="submit_button"
+                        value="{{ archive.date }}"
+                      />
+                    </tr>
+                    {% endfor %}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            {% endblock %}
           </div>
           <hr />
         </div>

@@ -12,7 +12,7 @@ import time
 from time_convert import pretty_date
 from datetime import datetime
 from sqlalchemy import create_engine, MetaData, Table
-from db_orch import query_sessions
+from db_orch import query_sessions, import_archive
 
 
 # engine = create_engine('mysql://BH6:password1@localhost/secure_sever_db', convert_unicode=True)
@@ -30,6 +30,9 @@ Bootstrap(app)
 
 @app.route('/archives')
 def archive():
+    if request.method == "POST":
+        date1 = request.form['date']
+        import_archive(date1)
     return render_template('archive.html')
 
 
@@ -37,12 +40,14 @@ def archive():
 def index():
     sessions = query_sessions()
     json_sessions = [d.__dict__ for d in sessions]
+    users = query_users()
+    json_users = [d.__dict__ for d in users]
     session_length = len(json_sessions)-1
     time2 = pretty_date(sessions[session_length-1].time)
     time1 = pretty_date(sessions[session_length].time)
     time3 = pretty_date(sessions[session_length-2].time)
     time4 = pretty_date(sessions[session_length-3].time)
-    return render_template('index.html', session_length=session_length, sessions=json_sessions, time1=time1, time2=time2, time3=time3, time4=time4)
+    return render_template('index.html', users=json_users, session_length=session_length, sessions=json_sessions, time1=time1, time2=time2, time3=time3, time4=time4)
 
 
 @app.route('/logs', methods=["GET", "POST"])

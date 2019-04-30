@@ -89,37 +89,41 @@
 
     <div class="container-fluid text-center">
       <div class="row content">
-        <div class="col-sm-2 sidenav">
-          <p><a href="#">Link</a></p>
-          <p><a href="#">Link</a></p>
-          <p><a href="#">Link</a></p>
-        </div>
+        <div class="col-sm-2 sidenav"></div>
         <div class="col-sm-8 text-left">
           <!-- <h1>SecureServerRoom</h1> -->
           <div class="container">
-            <h2>LOGS</h2>
-            <table class="table">
-              <thead>
-                <tr>
-                  <th>#</th>
-                  <th>Date</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>1</td>
-                  <td>12/10/2018</td>
-                </tr>
-                <tr>
-                  <td>2</td>
-                  <td>12/09/2018</td>
-                </tr>
-                <tr>
-                  <td>3</td>
-                  <td>12/08/2018</td>
-                </tr>
-              </tbody>
-            </table>
+            <h2>Users</h2>
+
+            {% block content %}
+            <div
+              class="flight-container"
+              style="overflow: auto; max-height: 80vh"
+            >
+              <div class="table-responsive">
+                <table class="table" id="flights">
+                  <thead>
+                    <tr>
+                      <th scope="col">Name</th>
+                      <th scope="col">Email</th>
+                      <th scope="col">Active</th>
+                      <th scope="col">Phone</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% for user in users %}
+                    <tr id="{{" user.id }}>
+                      <th scope="row">{{ user.username }}</th>
+                      <td>{{ user.email }}</td>
+                      <td>{{ user.authenticated }}</td>
+                      <td>{{ user.phonenumber }}</td>
+                    </tr>
+                    {% endfor %}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            {% endblock %}
           </div>
           <hr />
         </div>
@@ -144,7 +148,7 @@
             <p>{{ time2 }}</p>
           </div>
           <div class="well">
-            <p>{{ sessions[session_length - 1].host }}</p>
+            <p>{{ sessions[session_length - 2].host }}</p>
             <p>
               {{ sessions[session_length - 2].auid }}:{{
                 sessions[session_length - 2].cmd
@@ -153,7 +157,7 @@
             <p>{{ time3 }}</p>
           </div>
           <div class="well">
-            <p>{{ sessions[session_length - 1].host }}</p>
+            <p>{{ sessions[session_length - 3].host }}</p>
             <p>
               {{ sessions[session_length - 3].auid }}:{{
                 sessions[session_length - 3].cmd

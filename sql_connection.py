@@ -26,7 +26,7 @@ class Archived(db.Model):
     flag = db.Column(db.String(80), nullable=False)
 
     def __repr__(self):
-        return '|%r|%r|%r|%r|%r|%r|%r|%r|' % (self.path, self.date, self.flag)
+        return '|%r|%r|%r|' % (self.activity, self.date, self.flag)
 
 
 class Archived_User_Sessions(db.Model):
