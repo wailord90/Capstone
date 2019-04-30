@@ -31,7 +31,7 @@ def archive(activity, date, flag):
 
 
 def add_user(email, password, authenticated, username, phonenumber):
-    now = datetime.datetime.today()
+
     user = Users(email=email, password=password, authenticated=authenticated,
                  username=username, phonenumber=phonenumber)
     db.session.add(user)
