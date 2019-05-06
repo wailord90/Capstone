@@ -76,7 +76,7 @@ def logs():
 
     return render_template('hosts.html')
 
-@app.route('/SecureServerRoom.com/cameras')
+@app.route('/cameras')
 def cameras():
   return render_template('cameras.html')
 
