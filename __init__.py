@@ -100,9 +100,6 @@ def get_frame():
 	# Define the codec and create VideoWriter object.The output is stored in 'outpy.avi' file.
 	fourcc = cv2.VideoWriter_fourcc(*'XVID')
 	out = cv2.VideoWriter('output.avi',fourcc, 10.0, (640,480))
-	f= open("aaaa.txt","w+")
-	a=datetime.now()
-  	f.write("%s\r\n" % a)
 	while (True):
 		ret, preFrame = camera.read()
 		while(1):
