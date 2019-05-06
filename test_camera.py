@@ -1,24 +1,15 @@
-#include "opencv.hpp"
-#include <iostream>
+import numpy as np
+import cv2
 
-using namespace cv;
-using namespace std;
-int main() {
+cap = cv2.VideoCapture(0)
 
-VideoCapture videoIn(0);
-if (!videoIn.isOpened()) {
-    cout << "yo, i ain't see no camera";
-    return -1;
-}
+while(True):
+    # Capture frame-by-frame
+    ret, frame = cap.read()
 
-namedWindow("out", 1);
-for (;;) {
-    Mat frame;
-    videoIn >> frame;
-    imshow("out", frame);
-    if (waitKey(30) >= 0)
-        break;
+    if cap.isOpened():
+        print("Webcam online.")
 
-}
-return 1;
-}
+# When everything done, release the capture
+cap.release()
+cv2.destroyAllWindows()
