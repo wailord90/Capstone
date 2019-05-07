@@ -1,6 +1,7 @@
-#read fingerprint data from serial port and relay information to SMS text message system
+#read fingerprint data from serial port and relay information to main logging information
 #Andre Britton
 import serial
+from databaseLinker import fingerprintUserTransfer
 from sms import sendText
 #initialize serial port for listening
 ser = serial.Serial(
@@ -32,6 +33,7 @@ while True:
                 sendText(body, '+13185371836')
                 sendText(body, '+16182075730')
                 sendText(body, '+13184555586')
+                fingerprintUserTransfer(body)
 
             string = ""
 
