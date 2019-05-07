@@ -18,4 +18,4 @@ def sendText(body, to):
 
     print(message.sid)
 
-sendText('Urgent: The system has been compromised','+16182075730')
+# sendText('Urgent: The system has been compromised','+16182075730')
