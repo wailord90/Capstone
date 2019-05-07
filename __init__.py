@@ -28,7 +28,7 @@ Bootstrap(app)
 # camera2=cv2.VideoCapture(0) #this makes a web cam object
 
 
-@app.route('/archives')
+@app.route('/SecureServerRoom.com/archives')
 def archive():
     if request.method == "POST":
         date1 = request.form['date']
@@ -36,7 +36,7 @@ def archive():
     return render_template('archive.html')
 
 
-@app.route('/')
+@app.route('/SecureServerRoom.com/')
 def index():
     sessions = query_sessions()
     json_sessions = [d.__dict__ for d in sessions]
@@ -50,14 +50,14 @@ def index():
     return render_template('index.html', users=json_users, session_length=session_length, sessions=json_sessions, time1=time1, time2=time2, time3=time3, time4=time4)
 
 
-@app.route('/logs', methods=["GET", "POST"])
+@app.route('/SecureServerRoom.com/logs', methods=["GET", "POST"])
 def logs():
 
     if request.method == "POST":
         filterhost = ""
 
-        if request.form['submit_button'] == 'capstone_1':
-            filterhost = 'capstone_1'
+        if request.form['submit_button'] == 'jeremycamera-VirtualBox':
+            filterhost = 'jeremycamera-VirtualBox'
             pass  # do something
         elif request.form['submit_button'] == 'capstone_2':
             filterhost = 'capstone_2'
@@ -76,7 +76,7 @@ def logs():
 
     return render_template('hosts.html')
 
-@app.route('/cameras')
+@app.route('/SecureServerRoom.com/cameras')
 def cameras():
   return render_template('cameras.html')
 
@@ -98,8 +98,8 @@ def get_frame():
 	master = None
 
 	# Define the codec and create VideoWriter object.The output is stored in 'outpy.avi' file.
-	fourcc = cv2.VideoWriter_fourcc(*'XVID')
-	out = cv2.VideoWriter('output.avi',fourcc, 10.0, (640,480))
+	fourcc = cv2.VideoWriter_fourcc(*'MP4V')
+	out = cv2.VideoWriter('videos/output.mp4',fourcc, 10.0, (640,480))
 	while (True):
 		ret, preFrame = camera.read()
 		while(1):
@@ -146,43 +146,19 @@ def get_frame():
 			    if cv2.contourArea(c) < 500:
 				continue
 
-			    # contour data
-			    M = cv2.moments(c)  # ;print( M )
-			    cx = int(M['m10'] / M['m00'])
-			    cy = int(M['m01'] / M['m00'])
 			    x, y, w, h = cv2.boundingRect(c)
 			    rx = x + int(w / 2)
 			    ry = y + int(h / 2)
 			    ca = cv2.contourArea(c)
 
-			    # plot contours
-			    cv2.drawContours(frame6, [c], 0, (0, 0, 255), 2)
-			    cv2.rectangle(frame6, (x, y), (x + w, y + h), (0, 255, 0), 2)
-			    cv2.circle(frame6, (cx, cy), 2, (0, 0, 255), 2)
-			    cv2.circle(frame6, (rx, ry), 2, (0, 255, 0), 2)
 
 			    # save target contours
 			    targets.append((rx, ry, ca))
 
-			# make target
-			area = sum([x[2] for x in targets])
-			mx = 0
-			my = 0
-			if targets:
-			    for x, y, a in targets:
-				mx += x
-				my += y
-			    mx = int(round(mx / len(targets), 0))
-			    my = int(round(my / len(targets), 0))
-
-			# plot target
-			tr = 50
-			frame7 = frame0.copy()
+			
 			if targets:
 			    out.write(frame0)
-			    cv2.circle(frame7, (mx, my), tr, (0, 0, 255, 0), 2)
-			    cv2.line(frame7, (mx - tr, my), (mx + tr, my), (0, 0, 255, 0), 2)
-			    cv2.line(frame7, (mx, my - tr), (mx, my + tr), (0, 0, 255, 0), 2)
+			   
 			imgencode=cv2.imencode('.jpg',frame0)[1]
 			stringData=imgencode.tostring()
 			yield (b'--frame\r\n'b'Content-Type: text/plain\r\n\r\n'+stringData+b'\r\n')
@@ -196,7 +172,7 @@ def get_frame():
 
 
 
-@app.route('/changed')
+@app.route('/SecureServerRoom.com/changed')
 def calc():
      return Response(get_frame(),mimetype='multipart/x-mixed-replace; boundary=frame')
 

@@ -132,7 +132,7 @@
                   </thead>
                   <tbody>
                     {% for user in users %}
-                    <tr id="{{" user.id }}>
+                    <tr id={{ user.id }}>
                       <th scope="row">{{ user.username }}</th>
                       <td>{{ user.email }}</td>
                       <td>{{ user.authenticated }}</td>
