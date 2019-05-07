@@ -7,7 +7,7 @@ def fingerprintUserTransfer(string):
     #Example string="Valid Entry: Andre Britton Finger Found"
     wordList = string.split(" ")
     username = wordList[2] + " " + wordList[3]
-    # add functionality here
+    # add functionality below
     password = "example"
     email = "example@gmail.com"
     authenticated = "example"
