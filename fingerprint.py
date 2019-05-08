@@ -20,6 +20,8 @@ while True:
         #13= carriage return 10= newline
         if(line == 13):
             body=""
+            #print string for testing "Jeremy"
+            print (string)
             #string contain FingerPrint ID# and Confidence Level
             #relay data text message
             if (string[11] == '1'):
