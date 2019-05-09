@@ -100,12 +100,14 @@
                   <thead>
                     <tr>
                       <th scope="col">Date</th>
+		      <th scope="col">User</th>
                     </tr>
                   </thead>
                   <tbody>
                     {% for video in footage %}
                     <tr id={{ video.id }}>
-                      <th scope="row">{{ video.date }}</th>
+			    <th scope="row">{{ video.date }}</th>
+			        
                       <input
                         class="btn btn-primary"
                         type="submit"
@@ -114,6 +116,7 @@
                         video.date
                         }}
                       />
+		      </th>
                     </tr>
                     {% endfor %}
                   </tbody>
