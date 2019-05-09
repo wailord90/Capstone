@@ -85,11 +85,7 @@
 
     <div class="container-fluid text-center">
       <div class="row content">
-        <div class="col-sm-2 sidenav">
-          <p><a href="#">Link</a></p>
-          <p><a href="#">Link</a></p>
-          <p><a href="#">Link</a></p>
-        </div>
+        <div class="col-sm-2 sidenav"></div>
         <div class="col-sm-8 text-left">
           <div class="container">
             <h2>{{ host }}</h2>
@@ -114,7 +110,7 @@
                   </thead>
                   <tbody>
                     {% for session in sessions %}
-                    <tr id={{ session.id }}>
+                    <tr id="{{" session.id }}>
                       <th scope="row">{{ session.uid }}</th>
                       <td>{{ session.auid }}</td>
                       <td>{{ session.cmd }}</td>

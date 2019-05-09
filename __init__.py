@@ -12,7 +12,7 @@ import time
 from time_convert import pretty_date
 from datetime import datetime
 from sqlalchemy import create_engine, MetaData, Table
-from db_orch import query_sessions, query_users, import_archive
+from db_orch import query_sessions, query_users, query_footage, import_archive
 
 
 # engine = create_engine('mysql://BH6:password1@localhost/secure_sever_db', convert_unicode=True)
@@ -21,21 +21,18 @@ from db_orch import query_sessions, query_users, import_archive
 # data = engine.execute('select * from table_name').first()
 
 app = Flask(__name__, static_url_path='/static')
-# db = SQLAlchemy(app)
-# app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://user:root@localhost/secure_sever_db'
-Bootstrap(app)
 
-# camera2=cv2.VideoCapture(0) #this makes a web cam object
+Bootstrap(app)
 
 
 @app.route('/SecureServerRoom.com/archives')
 def archive():
-	footage = query_footage()
+    footage = query_footage()
     json_footage = [d.__dict__ for d in footage]
     if request.method == "POST":
-		video =request.form['submit_button']
-		return render_template('footage.html',video=str(video+".mp4"))
-    return render_template('archive.html',json_footage)
+        video = request.form['submit_button']
+        return render_template('footage.html', video=str(video+".mp4"))
+    return render_template('archive.html', json_footage)
 
 
 @app.route('/SecureServerRoom.com/')
@@ -75,115 +72,115 @@ def logs():
             if str(x['host']).strip() == filterhost:
                 tmp.append(x)
         return render_template("logs.html", sessions=tmp, host=filterhost)
-		
+
     return render_template('hosts.html')
+
 
 @app.route('/SecureServerRoom.com/cameras')
 def cameras():
-  return render_template('cameras.html')
+    return render_template('cameras.html')
+
 
 def gen():
-    i=1
-    while i<10:
+    i = 1
+    while i < 10:
         yield (b'--frame\r\n'
-            b'Content-Type: text/plain\r\n\r\n'+str(i)+b'\r\n')
-        i+=1
+               b'Content-Type: text/plain\r\n\r\n'+str(i)+b'\r\n')
+        i += 1
+
 
 def get_frame():
-	# init camera
-	camera = cv2.VideoCapture(0)
-	# camera.set(3, 320)   uncommenting these causes an error
-	# camera.set(4, 240)   making the video created unusable
-	time.sleep(0.5) #gives camera time to initialize (jeremy)
+        # init camera
+    camera = cv2.VideoCapture(0)
+    # camera.set(3, 320)   uncommenting these causes an error
+    # camera.set(4, 240)   making the video created unusable
+    time.sleep(0.5)  # gives camera time to initialize (jeremy)
 
-	# master frame
-	master = None
-	didmove=False
+    # master frame
+    master = None
+    didmove = False
 
-	# Define the codec and create VideoWriter object.The output is stored in 'outpy.avi' file.
-	fourcc = cv2.VideoWriter_fourcc(*'MP4V')
-	out = cv2.VideoWriter('videos/output.mp4',fourcc, 10.0, (640,480))
-	while (True):
-		ret, preFrame = camera.read()
-		while(1):
-			grabbed, frame0 = camera.read()
+    # Define the codec and create VideoWriter object.The output is stored in 'outpy.avi' file.
+    fourcc = cv2.VideoWriter_fourcc(*'MP4V')
+    out = cv2.VideoWriter('videos/output.mp4', fourcc, 10.0, (640, 480))
+    while (True):
+        ret, preFrame = camera.read()
+        while(1):
+            grabbed, frame0 = camera.read()
 
-			if not grabbed:  # error handle (jeremy)
-			     break
+            if not grabbed:  # error handle (jeremy)
+                break
 
+            # gray frame
+            frame1 = cv2.cvtColor(frame0, cv2.COLOR_BGR2GRAY)
 
-			# gray frame
-			frame1 = cv2.cvtColor(frame0, cv2.COLOR_BGR2GRAY)
+            # blur frame
+            frame2 = cv2.GaussianBlur(frame1, (21, 21), 0)
 
-			# blur frame
-			frame2 = cv2.GaussianBlur(frame1, (21, 21), 0)
+            # initialize master
+            if master is None:
+                master = frame2
+                continue
 
-			# initialize master
-			if master is None:
-			   master = frame2
-			   continue
+            # delta frame
+            frame3 = cv2.absdiff(master, frame2)
 
-			# delta frame
-			frame3 = cv2.absdiff(master, frame2)
+            # threshold frame
+            frame4 = cv2.threshold(frame3, 15, 255, cv2.THRESH_BINARY)[1]
 
-			# threshold frame
-			frame4 = cv2.threshold(frame3, 15, 255, cv2.THRESH_BINARY)[1]
+            # dilate the thresholded image to fill in holes
+            kernel = numpy.ones((5, 5), numpy.uint8)
+            frame5 = cv2.dilate(frame4, kernel, iterations=4)
 
-			# dilate the thresholded image to fill in holes
-			kernel = numpy.ones((5, 5), numpy.uint8)
-			frame5 = cv2.dilate(frame4, kernel, iterations=4)
+            # find contours on thresholded image
+            contours, nada = cv2.findContours(
+                frame5.copy(), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
 
-			# find contours on thresholded image
-			contours, nada = cv2.findContours(frame5.copy(), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+            # make coutour frame
+            frame6 = frame0.copy()
 
-			# make coutour frame
-			frame6 = frame0.copy()
+            # target contours
+            targets = []
 
-			# target contours
-			targets = []
+            # loop over the contours
+            for c in contours:
 
-			# loop over the contours
-			for c in contours:
+                # if the contour is too small, ignore it
+                if cv2.contourArea(c) < 500:
+                    continue
 
-			    # if the contour is too small, ignore it
-			    if cv2.contourArea(c) < 500:
-				continue
+                x, y, w, h = cv2.boundingRect(c)
+                rx = x + int(w / 2)
+                ry = y + int(h / 2)
+                ca = cv2.contourArea(c)
 
-			    x, y, w, h = cv2.boundingRect(c)
-			    rx = x + int(w / 2)
-			    ry = y + int(h / 2)
-			    ca = cv2.contourArea(c)
+                # save target contours
+                targets.append((rx, ry, ca))
 
+            if targets:
+                out.write(frame0)
+                if not didmove:
+                    didmove = True
+            imgencode = cv2.imencode('.jpg', frame0)[1]
+            stringData = imgencode.tostring()
+            yield (b'--frame\r\n'b'Content-Type: text/plain\r\n\r\n'+stringData+b'\r\n')
+            # update master
+            master = frame2
 
-			    # save target contours
-			    targets.append((rx, ry, ca))
-
-			
-			if targets:
-			    out.write(frame0)
-			   didmove =True
-			imgencode=cv2.imencode('.jpg',frame0)[1]
-			stringData=imgencode.tostring()
-			yield (b'--frame\r\n'b'Content-Type: text/plain\r\n\r\n'+stringData+b'\r\n')
-			# update master
-			master = frame2
-
-        # release video and camera
-    	camera.release()
-    	out.release()
-    	cv2.destroyAllWindows()
-		if didmove:
-			date=datetime.datetime.now()
-			add_footage(date,'none')
-			os.system("ffmpeg -i ./videos/output.mp4 -vcodec libx264 -acodec aac "+date.strftime("%m_%d_%Y_%H_%M_%S")+".mp4")
-
+    # release video and camera
+    camera.release()
+    out.release()
+    cv2.destroyAllWindows()
+    if didmove:
+        date = datetime.datetime.now()
+        add_footage(date, 'none')
+        os.system("ffmpeg -i ./videos/output.mp4 -vcodec libx264 -acodec aac " +
+                  date.strftime("%m_%d_%Y_%H_%M_%S")+".mp4")
 
 
 @app.route('/SecureServerRoom.com/changed')
 def calc():
-     return Response(get_frame(),mimetype='multipart/x-mixed-replace; boundary=frame')
-
-
+    return Response(get_frame(), mimetype='multipart/x-mixed-replace; boundary=frame')
 
 
 if __name__ == '__main__':
