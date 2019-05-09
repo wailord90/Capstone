@@ -104,13 +104,13 @@
                   </thead>
                   <tbody>
                     {% for video in footage %}
-                    <tr id="{{" video.id }}>
+                    <tr id={{ video.id }}>
                       <th scope="row">{{ video.date }}</th>
                       <input
                         class="btn btn-primary"
                         type="submit"
                         name="submit_button"
-                        value="{{"
+                        value={{
                         video.date
                         }}
                       />

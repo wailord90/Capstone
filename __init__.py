@@ -32,7 +32,7 @@ def archive():
     if request.method == "POST":
         video = request.form['submit_button']
         return render_template('footage.html', video=str(video+".mp4"))
-    return render_template('archive.html', json_footage)
+    return render_template('archive.html',footage= json_footage)
 
 
 @app.route('/SecureServerRoom.com/')

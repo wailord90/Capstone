@@ -23,7 +23,7 @@ def add_session(time, uid, auid, cwd, pid, a2, cmd, host, flag):
     db.session.commit()
 
 def change_user(userid):
-    admin = User.query.filter_by(userid).update(dict(authenticated=True)))
+    admin = User.query.filter_by(userid).update(dict(authenticated=True))
     db.session.commit()
 
 def archive(activity, date, flag):
