@@ -29,6 +29,7 @@ class Archived(db.Model):
         return '|%r|%r|%r|' % (self.activity, self.date, self.flag)
 
 
+
 class Archived_User_Sessions(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     uid = db.Column(db.String(80), nullable=False)
@@ -67,4 +68,4 @@ class footage(db.Model):
     user = db.Column(db.String(80), nullable=False)
 
     def __repr__(self):
-        return '|%r|%r|' % (self.date, self.usr)
+        return '|%r|%r|' % (self.date, self.user)

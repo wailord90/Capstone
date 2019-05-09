@@ -30,10 +30,12 @@ Bootstrap(app)
 
 @app.route('/SecureServerRoom.com/archives')
 def archive():
+	footage = query_footage()
+    json_footage = [d.__dict__ for d in footage]
     if request.method == "POST":
-        date1 = request.form['date']
-        import_archive(date1)
-    return render_template('archive.html')
+		video =request.form['submit_button']
+		return render_template('footage.html',video=str(video+".mp4"))
+    return render_template('archive.html',json_footage)
 
 
 @app.route('/SecureServerRoom.com/')
@@ -73,7 +75,7 @@ def logs():
             if str(x['host']).strip() == filterhost:
                 tmp.append(x)
         return render_template("logs.html", sessions=tmp, host=filterhost)
-
+		
     return render_template('hosts.html')
 
 @app.route('/SecureServerRoom.com/cameras')
@@ -90,12 +92,13 @@ def gen():
 def get_frame():
 	# init camera
 	camera = cv2.VideoCapture(0)
-	#camera.set(3, 320)   uncommenting these causes an error
-	#camera.set(4, 240)   making the video created unusable
+	# camera.set(3, 320)   uncommenting these causes an error
+	# camera.set(4, 240)   making the video created unusable
 	time.sleep(0.5) #gives camera time to initialize (jeremy)
 
 	# master frame
 	master = None
+	didmove=False
 
 	# Define the codec and create VideoWriter object.The output is stored in 'outpy.avi' file.
 	fourcc = cv2.VideoWriter_fourcc(*'MP4V')
@@ -158,17 +161,21 @@ def get_frame():
 			
 			if targets:
 			    out.write(frame0)
-			   
+			   didmove =True
 			imgencode=cv2.imencode('.jpg',frame0)[1]
 			stringData=imgencode.tostring()
 			yield (b'--frame\r\n'b'Content-Type: text/plain\r\n\r\n'+stringData+b'\r\n')
 			# update master
 			master = frame2
 
-        #release video and camera
+        # release video and camera
     	camera.release()
     	out.release()
     	cv2.destroyAllWindows()
+		if didmove:
+			date=datetime.datetime.now()
+			add_footage(date,'none')
+			os.system("ffmpeg -i ./videos/output.mp4 -vcodec libx264 -acodec aac "+date.strftime("%m_%d_%Y_%H_%M_%S")+".mp4")
 
 
 

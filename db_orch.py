@@ -1,4 +1,4 @@
-from sql_connection import User_Sessions, db, Archived, Users
+from sql_connection import User_Sessions,footage, db, Archived, Users
 from datetime import datetime
 import os
 
@@ -22,6 +22,9 @@ def add_session(time, uid, auid, cwd, pid, a2, cmd, host, flag):
     db.session.add(user_sess)
     db.session.commit()
 
+def change_user(userid):
+    admin = User.query.filter_by(userid).update(dict(authenticated=True)))
+    db.session.commit()
 
 def archive(activity, date, flag):
     now = datetime.datetime.today()
@@ -41,6 +44,14 @@ def add_user(email, password, authenticated, username, phonenumber):
 
 def query_users():
     return Users.query.all()
+
+def add_footage(time,user='none'):
+    video=footage(date=time,user=user)
+    db.session.add(video)
+    db.session.commit()
+
+def query_footage():
+    return User_Sessions.query.all()
 
 
 def query_sessions():

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -66,11 +67,11 @@
         <div class="collapse navbar-collapse" id="myNavbar">
           <ul class="nav navbar-nav">
             <li><a href="/SecureServerRoom.com/">Home</a></li>
-            <li><a href="/SecureServerRoom.com/logs">Logs</a></li>
-            <li><a href="/SecureServerRoom.com/cameras">Cameras</a></li>
             <li class="active">
-              <a href="/SecureServerRoom.com/archives">Archives</a>
+              <a href="/SecureServerRoom.com/logs">Logs</a>
             </li>
+            <li><a href="/SecureServerRoom.com/cameras">Cameras</a></li>
+            <li><a href="/SecureServerRoom.com/archives">Archives</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li>
@@ -85,42 +86,20 @@
 
     <div class="container-fluid text-center">
       <div class="row content">
+        <div class="col-sm-2 sidenav">
+        </div>
         <div class="col-sm-8 text-left">
           <div class="container">
-            <h2>Archives</h2>
-            <h2>{{ host }}</h2>
+            <h2>{{video}}</h2>
 
-            {% block content %}
-            <div
-              class="flight-container"
-              style="overflow: auto; max-height: 80vh"
-            >
-              <div class="table-responsive">
-                <table class="table" id="flights">
-                  <thead>
-                    <tr>
-                      <th scope="col">Date</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {% for video in footage %}
-                    <tr id="{{" video.id }}>
-                      <th scope="row">{{ video.date }}</th>
-                      <input
-                        class="btn btn-primary"
-                        type="submit"
-                        name="submit_button"
-                        value="{{"
-                        video.date
-                        }}
-                      />
-                    </tr>
-                    {% endfor %}
-                  </tbody>
-                </table>
+<video width="620" height="400" controls>
+  <source src={{video}} type="video/mp4">
+Your browser does not support the video tag.
+</video>
+
               </div>
             </div>
-            {% endblock %}
+            
           </div>
           <hr />
         </div>
