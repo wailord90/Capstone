@@ -14,7 +14,7 @@ import serial
 from time_convert import pretty_date
 from datetime import datetime
 from sqlalchemy import create_engine, MetaData, Table
-from db_orch import query_sessions, query_users, query_footage, import_archive
+from db_orch import query_sessions, query_users, query_footage, import_archive, add_footage
 from SMS import sendText
 
 # engine = create_engine('mysql://BH6:password1@localhost/secure_sever_db', convert_unicode=True)
@@ -166,12 +166,12 @@ def get_frame():
                 starttime = currenttime
             differ = currenttime-starttime
             users = query_users()
-            json_users = [d.__dict__ for d in users]
+            #json_users = [d.__dict__ for d in users]
             if targets:
                 out.write(frame0)
                 whatUser = ""
                 isAlert = False
-                for user in json_users:
+                for user in users:
                     if user.authenticated == True:
                         whatUser=user
                 if whatUser=="":
