@@ -26,6 +26,10 @@ def change_user(userid):
     Users.query.filter(Users.username==userid).update(dict(authenticated=True))
     db.session.commit()
 
+def false_user(userid):
+    Users.query.filter(Users.username==userid).update(dict(authenticated=False))
+    db.session.commit()
+
 def archive(activity, date, flag):
     now = datetime.datetime.today()
     backup(now)

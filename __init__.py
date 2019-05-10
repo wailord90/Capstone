@@ -106,6 +106,7 @@ def get_frame():
     fourcc = cv2.VideoWriter_fourcc(*'MP4V')
     out = cv2.VideoWriter('videos/output.mp4', fourcc, 10.0, (640, 480))
     starttime = time.time()
+    currenttime = time.time()
     countdown = False
     while (True):
         ret, preFrame = camera.read()
@@ -161,11 +162,20 @@ def get_frame():
                 # save target contours
                 targets.append((rx, ry, ca))
                 currenttime = time.time()
-                if countdown == False:
-                    starttime = currenttime
-                differ = currenttime-starttime
+            if countdown == False:
+                starttime = currenttime
+            differ = currenttime-starttime
+            users = query_users()
+            json_users = [d.__dict__ for d in users]
             if targets:
                 out.write(frame0)
+                whatUser = ""
+                isAlert = False
+                for user in json_users:
+                    if user.authenticated == True:
+                        whatUser=user
+                if whatUser=="":
+                    sendText("THIS IS BAD BUT GOOD", '13184555586')
                 countdown = True
                 if differ > 5:
                     sendText("Alert", '13184555586')
@@ -173,6 +183,7 @@ def get_frame():
                     date = datetime.now()
                     shorten = "ffmpeg -i ./videos/output.mp4 -vcodec libx264 -acodec aac "
                     thread.start_new_thread(os.system,(shorten+"./static/videos/"+date.strftime("%m_%d_%Y_%H_%M_%S")+".mp4",))
+                    add_footage(date, 'none')
                     countdown = False
             imgencode = cv2.imencode('.jpg', frame0)[1]
             stringData = imgencode.tostring()
