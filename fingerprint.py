@@ -1,7 +1,7 @@
 #read fingerprint data from #read fingerprint data from serial port and relay information to main logging information
 #Andre Britton
 import serial
-from db_orch from db_orch import query_sessions, query_users, query_footage, import_archive
+from db_orch import change_user
 from SMS import sendText
 
 #initialize serial port for listening

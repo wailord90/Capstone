@@ -2,6 +2,7 @@ from flask_bootstrap import Bootstrap
 # from pipenv.vendor.dotenv import load_dotenv
 from flask import Flask, render_template, request, jsonify, redirect, Response
 import os
+import thread
 import json
 import pprint
 import pusher
@@ -9,11 +10,12 @@ import cv2
 import sys
 import numpy
 import time
+import serial
 from time_convert import pretty_date
 from datetime import datetime
 from sqlalchemy import create_engine, MetaData, Table
 from db_orch import query_sessions, query_users, query_footage, import_archive
-
+from SMS import sendText
 
 # engine = create_engine('mysql://BH6:password1@localhost/secure_sever_db', convert_unicode=True)
 # metadata = MetaData(bind=engine)
@@ -99,10 +101,12 @@ def get_frame():
     # master frame
     master = None
     didmove = False
-
+    #sendText("Alert", '13184555586')
     # Define the codec and create VideoWriter object.The output is stored in 'outpy.avi' file.
     fourcc = cv2.VideoWriter_fourcc(*'MP4V')
     out = cv2.VideoWriter('videos/output.mp4', fourcc, 10.0, (640, 480))
+    starttime = time.time()
+    countdown = False
     while (True):
         ret, preFrame = camera.read()
         while(1):
@@ -156,11 +160,20 @@ def get_frame():
 
                 # save target contours
                 targets.append((rx, ry, ca))
-
+                currenttime = time.time()
+                if countdown == False:
+                    starttime = currenttime
+                differ = currenttime-starttime
             if targets:
                 out.write(frame0)
-                if not didmove:
-                    didmove = True
+                countdown = True
+                if differ > 5:
+                    sendText("Alert", '13184555586')
+                    out.release()
+                    date = datetime.now()
+                    shorten = "ffmpeg -i ./videos/output.mp4 -vcodec libx264 -acodec aac "
+                    thread.start_new_thread(os.system,(shorten+"./static/videos/"+date.strftime("%m_%d_%Y_%H_%M_%S")+".mp4",))
+                    countdown = False
             imgencode = cv2.imencode('.jpg', frame0)[1]
             stringData = imgencode.tostring()
             yield (b'--frame\r\n'b'Content-Type: text/plain\r\n\r\n'+stringData+b'\r\n')
@@ -172,10 +185,21 @@ def get_frame():
     out.release()
     cv2.destroyAllWindows()
     if didmove:
-        date = datetime.datetime.now()
+        sendText("Alert", '13184555586')
+        date = datetime.now()
         add_footage(date, 'none')
-        os.system("ffmpeg -i ./videos/output.mp4 -vcodec libx264 -acodec aac " +
-                  date.strftime("%m_%d_%Y_%H_%M_%S")+".mp4")
+        print date.strftime("%m_%d_%Y_%H_%M_%S")
+        os.system, ("ffmpeg -i ./videos/output.mp4 -vcodec libx264 -acodec aac " +
+                  "./static/videos/"+date.strftime("%m_%d_%Y_%H_%M_%S")+".mp4")
+        users = query_users()
+        json_users = [d.__dict__ for d in users]
+        whatUser = ""
+        isAlert = False
+        for user in json_users:
+            if user.authenticated == True:
+                whatUser=user
+        if whatUser=="":
+            sendText("Alert", '13184555586')
 
 
 @app.route('/SecureServerRoom.com/changed')
