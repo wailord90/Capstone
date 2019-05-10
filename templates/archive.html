@@ -101,22 +101,28 @@
                     <tr>
                       <th scope="col">Date</th>
 		      <th scope="col">User</th>
+		      <th scope ="col">Watch</th>
                     </tr>
                   </thead>
                   <tbody>
                     {% for video in footage %}
                     <tr id={{ video.id }}>
-			    <th scope="row">{{ video.date }}</th>
-			        
+			    
+			   <th scope="row">{{ video.date }}</th>
+			   <td>{{ video.user }}</td>
+			    <td> 
+				    <form method="post">
+					    <input type="hidden" id="slider_input" name="date" value={{video.date.strftime("%m_%d_%Y_%H_%M_%S")}} />
                       <input
                         class="btn btn-primary"
                         type="submit"
                         name="submit_button"
                         value={{
-                        video.date
+                        watch
                         }}
                       />
-		      </th>
+		      </form>
+		    </td>
                     </tr>
                     {% endfor %}
                   </tbody>
