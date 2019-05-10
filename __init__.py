@@ -27,12 +27,12 @@ app = Flask(__name__, static_url_path='/static')
 Bootstrap(app)
 
 
-@app.route('/SecureServerRoom.com/archives')
+@app.route('/SecureServerRoom.com/archives', methods=["GET", "POST"])
 def archive():
     footage = query_footage()
     json_footage = [d.__dict__ for d in footage]
     if request.method == "POST":
-        video = request.form['submit_button']
+        video = request.form['date']
         return render_template('footage.html', video=str(video+".mp4"))
     return render_template('archive.html',footage= json_footage)
 

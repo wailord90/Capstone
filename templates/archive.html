@@ -108,18 +108,17 @@
                     {% for video in footage %}
                     <tr id={{ video.id }}>
 			    
-			   <th scope="row">{{ video.date }}</th>
+			   <td scope="row">{{ video.date }}</td>
 			   <td>{{ video.user }}</td>
 			    <td> 
 				    <form method="post">
 					    <input type="hidden" id="slider_input" name="date" value={{video.date.strftime("%m_%d_%Y_%H_%M_%S")}} />
+
                       <input
                         class="btn btn-primary"
                         type="submit"
-                        name="submit_button"
-                        value={{
-                        watch
-                        }}
+                        name="date"
+                        value="watch"
                       />
 		      </form>
 		    </td>
